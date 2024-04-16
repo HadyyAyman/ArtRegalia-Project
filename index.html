@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Split Landing page</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a014b52ca8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Navigation bar -->
+  <nav class="">
+    <div class="wrapper">
+      <div class="logo"><a href="#">ArtRegalia</a></div>
+      <input type="radio" name="slider" id="menu-btn">
+      <input type="radio" name="slider" id="close-btn">
+      <ul class="nav-links">
+        <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Community</a></li>
+        <li>
+          <a href="#" class="desktop-item">Artist Categories</a>
+          <input type="checkbox" id="showDrop">
+          <label for="showDrop" class="mobile-item">Artist Categories</label>
+          <ul class="drop-menu">
+            <li><a href="#">Contemporary Art</a></li>
+            <li><a href="#">Street Art</a></li>
+            <li><a href="#">Digital Art</a></li>
+            <li><a href="#">Portrait Artists</a></li>
+            <li><a href="#">Wood Artists</a></li>
+            <li><a href="#">Muralists</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" class="desktop-item">Crafts Categories</a>
+          <input type="checkbox" id="showMega">
+          <label for="showMega" class="mobile-item">Crafts Categories</label>
+          <div class="mega-box">
+            <div class="content">
+              <div class="row">
+                <header>Bags</header>
+                <ul class="mega-links">
+                  <li><a href="#">Macramé</a></li>
+                  <li><a href="#">Beaded</a></li>
+                  <li><a href="#">Leather</a></li>
+                  <li><a href="#">Canvas</a></li>
+                </ul>
+              </div>
+              <div class="row">
+                <header>Bracelets</header>
+                <ul class="mega-links">
+                  <li><a href="#">Macramé</a></li>
+                  <li><a href="#">Beaded</a></li>
+                  <li><a href="#">Leather</a></li>
+                  <li><a href="#">Metal</a></li>
+                  <li><a href="#">Charm</a></li>
+                  <li><a href="#">Woven</a></li>
+                </ul>
+              </div>
+              <div class="row">
+                <header>Home Decor</header>
+                <ul class="mega-links">
+                  <li><a href="#">Textiles</a></li>
+                  <li><a href="#">Pottery</a></li>
+                  <li><a href="#">Woodcraft</a></li>
+                  <li><a href="#">Basketry</a></li>
+                  <li><a href="#">Lighting</a></li>
+                  <li><a href="#">Paintings</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+      <ul class="icon-links">
+        <li>
+          <a href="cart.html" class="icon"><i class="fa-solid fa-cart-shopping"></i></a>
+        </li>
+        <li>
+          <button type="button" class="icon-button desktop-item">
+            <span class="material-icon"><i class="fa-solid fa-bell"></i></span>
+            <span class="icon-button-badge">2</span>
+          </button>
+        <li class="mobile-item"> <button type="button" class="icon-button">
+            <span class="material-icon"><i class="fa-solid fa-bell"></i></span>
+            <span class="icon-button-badge">2</span>
+          </button>Notifications</li>
+        </li>
+        </li>
+        <li>
+          <a href="#" class="icon desktop-item""><i class=" fa-regular fa-circle-user"></i></a>
+          <input type="checkbox" id="showProfile">
+          <label for="showProfile" class="mobile-item"><i class=" fa-regular fa-circle-user"></i></label>
+          <ul class="drop-menu profile-menu">
+            <li><i class=" fa-regular fa-user"></i><a href="#" class="item-list">View Profile</a></li>
+            <li><i class=" fa-regular fa-heart"></i><a href="#" class="item-list">Wish List</a></li>
+            <li><i class=" fa-solid fa-gear"></i><a href="#" class="item-list">Settings</a></li>
+            <li><i class=" fa-solid fa-circle-question"></i><a href="#" class="item-list">Help</a></li>
+            <li><i class=" fa-solid fa-lock-open"></i><a href="#" class="item-list">Sign-in</a></li>
+          </ul>
+        </li>
+      </ul>
+      <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+    </div>
+  </nav>
+
+  <!-- split landing page -->
+  <div class="container">
+    <div class="split left">
+      <h1 class="craftart">Craftsmen</h1>
+      <a href="#" class="show-btn">Show</a>
+    </div>
+    <div class="split right">
+      <h1 class="craftart">Artists</h1>
+      <a href="#" class="show-btn">Show</a>
+    </div>
+
+    <!-- scroll animation -->
+    <div class="scroll-container">
+      <div class="indicator">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+
+    <div class="home-container">
+      <h1>
+        Welcome
+      </h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eos ducimus ut dolorem dolore labore
+        recusandae
+        enim repudiandae. Hic, quaerat modi. Nam corporis cupiditate eius reiciendis explicabo itaque, excepturi
+        rem!
+      </p>
+      <h1>
+        Welcome
+      </h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eos ducimus ut dolorem dolore labore
+        recusandae
+        enim repudiandae. Hic, quaerat modi. Nam corporis cupiditate eius reiciendis explicabo itaque, excepturi
+        rem!
+      </p>
+    </div>
+
+  </section>
+
+  <script src="split.js" charset="UTF-8"></script>
+</body>
+
+</html>
