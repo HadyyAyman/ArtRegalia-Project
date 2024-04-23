@@ -40,3 +40,10 @@ for (let i = 0; i < navElems.length; i++) {
     overlay.classList.toggle("active");
   });
 }
+
+var topPage = document.getElementById("top");
+
+topPage.addEventListener("click", function () {
+  document.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+});
