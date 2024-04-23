@@ -16,16 +16,16 @@ right.addEventListener("mouseleave", () => {
   container.classList.remove("hover-right");
 });
 
-nav = document.querySelector("nav");
-window.addEventListener("scroll", fixNav);
+// nav = document.querySelector("nav");
+// window.addEventListener("scroll", fixNav);
 
-function fixNav() {
-  if (window.scrollY > nav.offsetHeight + 150) {
-    nav.classList.add("active");
-  } else {
-    nav.classList.remove("active");
-  }
-}
+// function fixNav() {
+//   if (window.scrollY > nav.offsetHeight + 150) {
+//     nav.classList.add("active");
+//   } else {
+//     nav.classList.remove("active");
+//   }
+// }
 
 const overlay = document.querySelector("[data-overlay]");
 const navOpenBtn = document.querySelector("[data-nav-open-btn]");
