@@ -216,13 +216,9 @@ body {
   }
 }
 
-/* ==================================== */
-/* HEADER AND NAVIGATION BAR ON DESKTOP */
-/* ==================================== */
+/* Base Desktop styles */
 
-/* Base styles (already defined above) remain the same */
-
-/* Media query for desktop screens with a min-width of 801px */
+/* Media query for desktop screens with a min-width of 901px */
 @media (min-width: 901px) {
 
   .nav-open-btn,
@@ -494,10 +490,87 @@ body {
   .side-profile i.desk:is(:hover, :focus) {
     color: var(--color6);
   }
+
+
+  /* ======================= */
+  /* Benefit Section Styling */
+  /* ======================= */
+
+  .Benefit-container {
+    width: 1500px;
+    margin: 40px;
+    padding: 20px;
+    background-color: rgba(52, 58, 64, 0.1);
+    border-radius: 20px;
+  }
+
+  .Benefit-container .Benefit {
+    color: var(--color9);
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .Benefit-container .artisans {
+    color: var(--color9);
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .Benefit-container p {
+    color: var(--color9);
+    font-size: 16px;
+  }
+
+  .Grid-Container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  .grid-item {
+    width: 450px;
+    height: 100%;
+    text-align: center;
+    place-self: center;
+    background-color: var(--color1);
+    border-radius: 12px;
+    padding: 10px;
+  }
+
+  .grid-item i {
+    font-size: 48px;
+    margin-top: 30px;
+    color: var(--color9);
+  }
+
+  .grid-item h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color9);
+    white-space: nowrap;
+  }
+
+  .grid-item p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25px;
+  }
+
+  .Grid-Container .customers {
+    grid-column: 1 / 4;
+    grid-row: 2 / 2;
+    place-self: center;
+    color: var(--color9);
+    font-size: 32px;
+    font-weight: bold;
+  }
 }
 
+
 /* =================================== */
-/* HEADER AND NAVIGATION BAR ON MOBILE */
+/* MOBILE STYLING  */
 /* =================================== */
 
 @media (max-width: 900px) {
@@ -860,21 +933,74 @@ body {
     background: var(--color8);
   }
 
-}
+  .Benefit-container {
+    width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(52, 58, 64, 0.1);
+    border-radius: 20px;
+  }
 
-.home-container {
-  width: 1200px;
-  margin: 20px auto;
-  padding: 20px;
-}
+  .Benefit-container .Benefit {
+    color: var(--color9);
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+  }
 
-.home-container h1 {
-  color: var(--color9);
-  font-size: 48px;
-  font-weight: bold;
-}
+  .Benefit-container .artisans {
+    color: var(--color9);
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+  }
 
-.home-container p {
-  color: var(--color9);
-  font-size: 32px;
+  .Benefit-container p {
+    color: var(--color9);
+    font-size: 16px;
+  }
+
+  .Grid-Container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .grid-item {
+    width: 450px;
+    height: auto;
+    place-self: center;
+    text-align: center;
+    background-color: var(--color1);
+    border-radius: 12px;
+    padding: 10px;
+  }
+
+  .grid-item i {
+    font-size: 48px;
+    margin-top: 30px;
+    color: var(--color9);
+  }
+
+  .grid-item h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color9);
+    white-space: nowrap;
+  }
+
+  .grid-item p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25px;
+  }
+
+  .Grid-Container .customers {
+    grid-column: 1 / 1;
+    place-self: center;
+    color: var(--color9);
+    font-size: 32px;
+    font-weight: bold;
+  }
+
 }
