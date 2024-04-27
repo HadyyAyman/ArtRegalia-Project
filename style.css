@@ -274,7 +274,7 @@ body {
     display: inline-flex;
   }
 
-  .nav-action-list li span,
+  .nav-action-list li .nav-action-text,
   .nav-action-list li data {
     display: none;
   }
@@ -447,6 +447,28 @@ body {
     text-decoration: none;
     font-size: 16px;
     border: none;
+    position: relative;
+  }
+
+  .icon-badge-btn {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+    color: var(--color2);
+    background-color: rgb(62, 119, 206);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: translateY(0);
+  }
+
+  .nav-action-btn:hover .icon-badge-btn {
+    transform: translateY(-3px);
   }
 
   .nav-action-list li button {
@@ -463,6 +485,7 @@ body {
 
   .nav-action-btn:is(:hover, :focus) {
     color: var(--color6);
+
   }
 
   .nav-action-btn i {
@@ -494,7 +517,6 @@ body {
   .side-profile i.desk:is(:hover, :focus) {
     color: var(--color6);
   }
-
 
   /* ======================= */
   /* Benefit Section Styling */
@@ -724,6 +746,11 @@ body {
     display: none;
   }
 
+  button .icon-badge-btn {
+    display: none;
+    visibility: hidden;
+  }
+
   .header {
     background: var(--color2);
     position: fixed;
@@ -890,6 +917,16 @@ body {
     font-size: 16px;
     background-color: var(--color1);
     border: none;
+  }
+
+  .notify-btn {
+    position: relative;
+    right: 5px;
+  }
+
+  .nav-action-badge-notify {
+    position: relative;
+    left: 10px;
   }
 
   .nav-action-btn:is(:hover, :focus) {
