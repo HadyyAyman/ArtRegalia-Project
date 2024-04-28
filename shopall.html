@@ -12,7 +12,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <!-- <link rel="manifest" href="/site.webmanifest"> -->
 </head>
 
 <body>
@@ -182,93 +182,39 @@
       </nav>
     </div>
   </header>
+
   <!-- =============================== -->
-  <!-- split landing page -->
+  <!-- carousel section / website branding  -->
   <!-- =============================== -->
-  <div class="container">
-    <div class="split left">
-      <h1 class="craftart">Craftsmen</h1>
-      <a href="#" class="show-btn">Show</a>
-    </div>
-    <div class="split right">
-      <h1 class="craftart">Artists</h1>
-      <a href="#" class="show-btn">Show</a>
+  <div class="carousel">
+    <button class="carousel__button caro-left is-hidden"><i class="fa-solid fa-chevron-left"></i></button>
+
+    <div class="carousel__track-container">
+      <ul class="carousel__track">
+        <li class="carousel__slide current-slide">
+          <img class="carousel__image" src="./images/art.jpg" alt="">
+          <h1>Hello</h1>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam doloremque, excepturi fugit magnam
+            nesciunt deserunt aliquam blanditiis facere dignissimos sapiente maxime vero. Ab veniam, eligendi ipsa
+            beatae id sunt voluptate.</p>
+        </li>
+        <li class="carousel__slide">
+          <img class="carousel__image" src="./images/artist.jpg" alt="">
+        </li>
+        <li class="carousel__slide">
+          <img class="carousel__image" src="./images/craftart.jpg" alt="">
+        </li>
+      </ul>
     </div>
 
-    <!-- scroll animation -->
-    <div class="scroll-container">
-      <div class="indicator">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+    <button class="carousel__button caro-right"><i class="fa-solid fa-chevron-right"></i></button>
+
+    <div class="carousel__nav">
+      <button class="carousel__indicator current-slide"></button>
+      <button class="carousel__indicator"></button>
+      <button class="carousel__indicator"></button>
     </div>
   </div>
-
-  <!-- =============================== -->
-  <!-- Benefit Section -->
-  <!-- =============================== -->
-  <section>
-
-    <div class="Benefit-container">
-      <h1 class="Benefit">Benefits</h1>
-      <h1 class="artisans">Artisans</h1>
-      <div class="Grid-Container">
-
-        <div class="grid-item">
-          <i class="fa-solid fa-eye"></i>
-          <h3>Increased Visibility</h3>
-          <p>Our platform exposes your artisanal products to a broader audience, connecting you with customers who value
-            craftsmanship and quality. This increased visibility helps elevate your brand and expand your market reach
-            beyond local boundaries.</p>
-        </div>
-
-        <div class="grid-item">
-          <i class="fa-solid fa-chart-simple"></i>
-          <h3>Marketing Support</h3>
-          <p>We provide marketing and promotional support that amplifies your presence in the market. By featuring your
-            products in our campaigns, we help tell your story, showcasing the uniqueness of your work and attracting
-            more buyers.</p>
-        </div>
-
-        <div class="grid-item">
-          <i class="fa-solid fa-hand-holding-dollar"></i>
-          <h3>Streamlined Sales Process</h3>
-          <p>Our user-friendly website simplifies the sales process, handling everything from secure payment processing
-            to customer inquiries. This allows you to focus more on your craft and less on the logistics of selling.</p>
-        </div>
-
-        <h1 class="customers">Customers</h1>
-
-        <div class="grid-item">
-          <i class="fa-solid fa-box-open"></i>
-          <h3>Access to Unique Products</h3>
-          <p>Customers have the opportunity to purchase unique, handmade products that stand out from mass-produced
-            goods. Each item on our platform carries a story of tradition and personal touch that can’t be found
-            elsewhere.</p>
-        </div>
-
-        <div class="grid-item">
-          <i class="fa-solid fa-medal"></i>
-          <h3>Quality Assurance</h3>
-          <p>We ensure that all products listed on our platform meet high-quality standards. Our commitment to
-            excellence means customers can trust that they are purchasing the best in artisanal craftsmanship.</p>
-        </div>
-
-        <div class="grid-item">
-          <i class="fa-solid fa-handshake-angle"></i>
-          <h3>Supporting Local Economies</h3>
-          <p>By buying from our platform, customers contribute to sustaining local artisans and their communities. We
-            promote ethical practices that support both people and the planet, making every purchase a step towards a
-            more sustainable future.</p>
-        </div>
-
-      </div>
-    </div>
-
-  </section>
-
   <!-- =============================== -->
   <!-- Footer Section -->
   <!-- =============================== -->
