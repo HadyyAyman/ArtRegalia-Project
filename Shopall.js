@@ -1,3 +1,15 @@
+//=======================================
+// SEARCH BUTTON FUNCTION
+//=======================================
+
+document.getElementById("searchButton").addEventListener("click", function () {
+  document.getElementById("searchOverlay").style.display = "flex"; // Show the overlay
+});
+
+document.getElementById("closeButton").addEventListener("click", function () {
+  document.getElementById("searchOverlay").style.display = "none"; // Hide the overlay
+});
+
 //=================
 //carousel function
 //=================
@@ -126,6 +138,9 @@ for (let i = 0; i < navElems.length; i++) {
   });
 }
 
+//=======================================
+// To Top Page Function
+//=======================================
 var topPage = document.getElementById("top");
 
 topPage.addEventListener("click", function () {
