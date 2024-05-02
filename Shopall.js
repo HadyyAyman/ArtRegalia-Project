@@ -20,6 +20,17 @@ const nextButton = document.querySelector(".caro-right");
 const prevButton = document.querySelector(".caro-left");
 const dotsNav = document.querySelector(".carousel__nav");
 const dots = Array.from(dotsNav.children);
+const openSearchBtn = document
+  .getElementById("searchButton")
+  .addEventListener("click", function () {
+    document.getElementById("searchOverlay").style.display = "flex"; // Show the overlay
+  });
+
+const closeSearchBtn = document
+  .getElementById("closeButton")
+  .addEventListener("click", function () {
+    document.getElementById("searchOverlay").style.display = "none"; // Hide the overlay
+  });
 
 const slideWidth = slides[0].getBoundingClientRect().width;
 // console.log(slideWidth);
@@ -93,28 +104,6 @@ dotsNav.addEventListener("click", (e) => {
   moveToSlide(track, currentSlide, targetSlide);
   updateDots(currentDot, targetDot);
   hideShowArrow(slides, prevButton, nextButton, targetIndex);
-});
-
-//============================
-//split landing page function
-//============================
-
-left = document.querySelector(".left");
-right = document.querySelector(".right");
-container = document.querySelector(".container");
-
-left.addEventListener("mouseenter", function () {
-  container.classList.add("hover-left");
-});
-left.addEventListener("mouseleave", function () {
-  container.classList.remove("hover-left");
-});
-
-right.addEventListener("mouseenter", function () {
-  container.classList.add("hover-right");
-});
-right.addEventListener("mouseleave", function () {
-  container.classList.remove("hover-right");
 });
 
 //============================
