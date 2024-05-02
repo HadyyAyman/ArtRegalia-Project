@@ -401,6 +401,7 @@ body {
     display: flex;
     width: 800px;
     justify-content: space-between;
+    align-items: start;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 
   }
