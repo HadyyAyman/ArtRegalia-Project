@@ -583,6 +583,38 @@ body {
   }
 
   /* ======================= */
+  /* problem Section Styling */
+  /* ======================= */
+  .Grid-problem-Container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Grid-problem-Container .trans-ground {
+    background: transparent;
+    height: 500px;
+    align-self: center;
+  }
+
+  .Grid-problem-Container .grid-item {
+    width: 100%;
+  }
+
+  .Grid-problem-Container .grid-item p {
+    text-align: start;
+
+  }
+
+  .grid-item .fa-solid.fa-gears {
+    font-size: 20rem;
+    /* float: left; */
+  }
+
+
+
+  /* ======================= */
   /* Benefit Section Styling */
   /* ======================= */
 
