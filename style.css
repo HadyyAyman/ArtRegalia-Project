@@ -456,7 +456,7 @@ body {
   /* ======================= */
   /* SEARCH STYLES           */
   /* ======================= */
-  #searchOverlay {
+  /* #searchOverlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -511,7 +511,8 @@ body {
     border: 2px solid var(--color1);
     border-radius: 5px;
     cursor: pointer;
-  }
+  } */
+
 
   .icon-badge-btn {
     position: absolute;

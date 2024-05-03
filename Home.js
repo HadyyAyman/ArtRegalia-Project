@@ -43,15 +43,3 @@ topPage.addEventListener("click", function () {
   document.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 });
-
-const openSearchBtn = document
-  .getElementById("searchButton")
-  .addEventListener("click", function () {
-    document.getElementById("searchOverlay").style.display = "flex"; // Show the overlay
-  });
-
-const closeSearchBtn = document
-  .getElementById("closeButton")
-  .addEventListener("click", function () {
-    document.getElementById("searchOverlay").style.display = "none"; // Hide the overlay
-  });
