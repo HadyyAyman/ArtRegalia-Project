@@ -31,7 +31,6 @@ html {
 }
 
 body {
-  font-family: 'comfortaa', sans-serif;
   width: 100%;
   height: 100vh;
   margin: 0;
@@ -804,15 +803,8 @@ body {
 
   main {
     max-width: 100%;
-    height: 100%;
     margin: 20px auto auto;
   }
-
-  /* .container {
-    max-width: 100%;
-    height: 100%;
-    margin: 20px auto;
-  } */
 
   .background-container {
     background-color: var(--color2);
@@ -830,8 +822,71 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
+  .product-container.col-12.col-md-10 {
+    width: 86.5% !important;
+  }
+
+  .product-container.col-12.col-md-5 {
+    width: 43.25% !important;
+  }
+
+  .banner {
+    grid-column: 1/4;
+    width: 100%;
+    margin: 10px 70px;
+    border-radius: 12px;
+  }
+
+  .banner img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 12px;
+  }
+
+  .product-container .banner .image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .product-container .banner .image-container .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+
+  }
+
+  .product-container .banner .image-container:hover img {
+    transform: scale(1.1);
+  }
+
+  .product-container .banner .image-container:hover .image-overlay {
+    opacity: 1;
+
+  }
+
+  .image-container .image-text {
+    background: transparent;
+    font-style: italic;
+    text-transform: uppercase;
+    color: var(--color1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   .product {
-    background: var(--color1);
+    background: var(--color2);
     max-width: 350px;
     position: relative;
     z-index: 15;
@@ -844,7 +899,7 @@ body {
   .product-description {
     position: relative;
     z-index: 15;
-    background: #fff;
+    background: var(--color2);
   }
 
 
@@ -887,7 +942,7 @@ body {
 
   .product-sidebar {
     height: 100%;
-    background: var(--color1);
+    background: var(--color2);
     width: 50px;
     position: absolute;
     top: 0;
@@ -902,7 +957,7 @@ body {
 
   .product-sidebar button {
     border: 0;
-    color: #fff;
+    color: var(--color2);
     padding: 0.9em;
     font-size: 0.8em;
     width: 50px;
@@ -912,8 +967,11 @@ body {
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 
   }
+
+
 
   .product-sidebar button.buy,
   .product-sidebar button.info,
@@ -946,12 +1004,12 @@ body {
 
   .product-sidebar button i {
     font-size: 24px;
-    position: fixed;
+    position: absolute;
   }
 
   .product-sidebar button:hover i {
     font-size: 24px;
-    position: fixed;
+    position: absolute;
     margin-right: 80px;
   }
 
@@ -994,13 +1052,27 @@ body {
     border-bottom: 2px solid #EF566D;
   }
 
-
   .product:hover .product-sidebar {
     right: -50px;
     background-color: var(--color8);
     transition: all .5s ease-in-out;
   }
 
+  /* carousel product card images*/
+
+  .carousel.slide {
+    height: auto !important;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    filter: invert(100%);
+
+  }
+
+  .carousel-indicators button {
+    background-color: #fff;
+  }
 
   /* ======================= */
   /* footer Section Styling  */
@@ -1070,7 +1142,6 @@ body {
 
   .footer {
     position: relative;
-    top: 100%;
     display: flex;
     align-items: center;
     width: 100%;
