@@ -12,17 +12,6 @@ const nextButton = document.querySelector(".caro-right");
 const prevButton = document.querySelector(".caro-left");
 const dotsNav = document.querySelector(".carousel__nav");
 const dots = Array.from(dotsNav.children);
-const openSearchBtn = document
-  .getElementById("searchButton")
-  .addEventListener("click", function () {
-    document.getElementById("searchOverlay").style.display = "flex"; // Show the overlay
-  });
-
-const closeSearchBtn = document
-  .getElementById("closeButton")
-  .addEventListener("click", function () {
-    document.getElementById("searchOverlay").style.display = "none"; // Hide the overlay
-  });
 
 const slideWidth = slides[0].getBoundingClientRect().width;
 // console.log(slideWidth);
