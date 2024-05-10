@@ -1114,7 +1114,7 @@ body {
   /* ======================= */
 
   .login-page {
-    min-height: 620px;
+    min-height: 800px;
     width: 400px;
     margin: auto;
     overflow: hidden;
@@ -1133,7 +1133,7 @@ body {
   }
 
   .login-page2{
-    min-height: 1580px;
+    min-height: 1600px;
     width: 800px;
     margin: auto;
     overflow: hidden;
@@ -1147,13 +1147,72 @@ body {
   }
 
   .login-page2 .form{
-    margin-top: 530px;
+    margin-top: 540px;
+    margin-bottom: 50px;
     padding: 20px;
     box-sizing: border-box;
     background: #343A40;
     border-radius: 10px;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   }
+
+  .checkbox-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px; /* Add some space between checkboxes and form */
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: column;
+    padding-right: 260px; /* Adjust the padding to ensure checkboxes are stacked */
+    margin-bottom: 10px; /* Add some space between checkboxes */
+}
+
+.checkbox label {
+    position: relative;
+    cursor: pointer;
+    padding-left: 25px;
+    color: #ced4da;
+}
+
+.checkbox input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.checkbox label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #289bb8; /* Border color */
+    border-radius: 3px;
+    background-color: transparent;
+}
+
+.checkbox input[type="checkbox"]:checked + label:before {
+    background-color: #343a40; /* Checkbox color when checked */
+}
+
+.checkbox label:after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    display: none;
+}
+
+.checkbox input[type="checkbox"]:checked + label:after {
+    display: block;
+}
 
   .select-container{
     display: flex;
@@ -1688,12 +1747,12 @@ body {
 
   .show-more:hover {
     text-decoration: underline;
-  }
     background: var(--color8);
   }
+}
 
   
-}
+
 
 
   /* =================================== */
@@ -2269,8 +2328,4 @@ body {
       justify-content: space-between;
       width: 100%;
     }
-
-
-
   }
-}
