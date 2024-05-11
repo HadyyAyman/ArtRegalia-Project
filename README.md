@@ -1,5 +1,3 @@
-Login / sign-up 
-blog 
-about us 
-community
-filter section on products page
+Hady Ayman: 
+=> Fix sign-up height
+=> Add sign-up java-script
