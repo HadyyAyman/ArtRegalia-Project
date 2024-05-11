@@ -1297,6 +1297,7 @@ body {
     padding: 10px 20px;
     color: #E9ECEF;
     font-size: 16px;
+    font-weight: bolder;
     text-decoration: solid;
     overflow: hidden;
     transition: .5s;
@@ -1307,6 +1308,7 @@ body {
   .form .btn:hover {
     background: #E9ECEF;
     color: #212529;
+    font-weight: bolder;
     border-radius: 5px;
     box-shadow: 0 0 5px #E9ECEF,
       0 0 25px #E9ECEF,
@@ -1760,11 +1762,214 @@ body {
     text-decoration: underline;
     background: var(--color8);
   }
+
+/* =================================== */
+/* CART ICON STYLING  */
+/* =================================== */
+.cart-main{
+  background-color: #DEE2E6;
+  min-height: 500px;
 }
 
-  
+.cart-item-container, .cart-summary{
+  background-color: #F8F9FA;
+  margin-left: 55px;
+}
 
+.cart-item{
+  padding-top: 120px;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  /* gap: 10px; */
+}
 
+.cart-product {
+  /* border: 1px solid #ccc; */
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-product-header {
+  margin-bottom: 20px;
+}
+
+.cart-product-header h2, .cart-summary-container h2{
+  color: #212529;
+}
+
+.product-details-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-link{
+  display: flex;
+  width: 100%;
+  text-decoration: none;
+}
+
+.product-details-container .product-image-container{
+  width: 72px;
+}
+
+.product-image-container img{
+  float: left;
+}
+
+.product-info {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.product-name {
+  color: #495057;
+}
+
+.product-info .product-description{
+  background: none;
+  color: #212529;
+}
+.product-price {
+  font-weight: bold;
+  float: right;
+}
+
+.product-footer {
+  display: flex;
+  margin-top: 20px; /* Adjust margin to separate from product-link */
+}
+
+.remove-btn {
+  display: flex;
+  gap: 5px;
+  padding-top: 7px;
+  color: #212529;
+  background-color: #F8F9FA;
+  border: none;
+  border-radius: 5%;
+  cursor: pointer;
+  font-weight: bolder;
+  transition: .5s;
+}
+
+.remove-btn:hover{
+  background: #212529;
+  color: #CED4DA;
+  font-weight: bolder;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #212529,
+    0 0 25px #212529,
+    0 0 50px #212529,
+    0 0 100px #212529;
+}
+
+.quantity-form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  border-bottom: none;
+
+}
+
+.quantity-form .quantity-value{
+  color: #212529;
+}
+
+.decrease-btn,
+.increase-btn {
+  background-color: #495057;
+  color: #CED4DA;
+  width: 30px;
+  height: 30px;
+  border: none;
+  padding: 0px;
+  cursor: pointer;
+  border-radius: 20%;
+  font-weight: bolder;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.decrease-btn:hover,
+.increase-btn:hover{
+  color: #CED4DA;
+  background: #212529;
+  box-shadow: 0 0 5px #212529,
+    0 0 25px #212529,
+    0 0 50px #212529,
+    0 0 100px #212529;
+} 
+
+.quantity-value {
+  margin: 0 10px;
+}
+
+.cart-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid #ccc; */
+  border-radius: 5px;
+  padding: 20px;
+  margin-right: 60px;
+}
+
+.cart-summary-details {
+  text-align: left;
+}
+
+.subtotal {
+  color: #212529;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: baseline;
+  width: 100%;
+}
+
+.subtotal .price{
+  font-weight: bolder;
+}
+
+.cart-summary-container{
+  width: 100%;
+}
+
+.cart-summary-details .checkout-btn{
+  width: 100%;
+}
+
+.checkout-btn a.btn {
+  position: relative;
+  display: inline-block;
+  padding: 10px 120px;
+  color: #CED4DA;
+  background-color: #495057;
+  font-size: 16px;
+  font-weight: bolder;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 15px;
+  letter-spacing: 2px;
+}
+
+.checkout-btn a.btn:hover {
+  background: #212529;
+  color: #CED4DA;
+  font-weight: bolder;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #212529,
+    0 0 25px #212529,
+    0 0 50px #212529,
+    0 0 100px #212529;
+}
+
+}
 
 /* =================================== */
 /* MOBILE STYLING  */
