@@ -1636,7 +1636,6 @@ body {
   .dropdown:is(:hover, :focus) {
     text-decoration: underline;
     background-color: var(--color8);
-    border: 0;
     color: var(--color2);
   }
 
@@ -1672,7 +1671,6 @@ body {
     display: block;
     border-bottom: 1px solid var(--color6);
   }
-
 
 
   .sort-dropdown-item:hover {
@@ -2046,10 +2044,11 @@ body {
 
   .shop-type {
     width: 100%;
-    display: inline-block;
+    /* display: inline-block; */
     border-radius: 5px;
     border-color: var(--color2);
   }
+
 
   i#sort-chevron\ shops-chevron {
     position: relative;
