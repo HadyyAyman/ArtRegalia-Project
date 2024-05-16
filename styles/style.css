@@ -2244,78 +2244,10 @@ body {
   }
 
   /* =================================== */
-  /* FORM REVIEW STYLING  */
+  /* SINGLE PRODUCT STYLING  */
   /* =================================== */
 
-  .review-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    background-color: var(--color2);
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-  }
-
-  .review-form .form-group {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .review-form .form-group label {
-    margin-bottom: 0.5rem;
-    color: var(--text-dark);
-  }
-
-  .review-form .form-group input,
-  .review-form .form-group textarea {
-    padding: 0.5rem;
-    border: 1px solid var(--text-dark);
-    border-radius: 0.5rem;
-  }
-
-  .review-form .star-rating {
-    display: flex;
-    direction: row-reverse;
-    font-size: 2rem;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 150px;
-  }
-
-  .review-form .star-rating input {
-    display: none;
-  }
-
-  .review-form .star-rating label {
-    color: #ddd;
-    cursor: pointer;
-  }
-
-  .review-form .star-rating input:checked~label {
-    color: #ffc700;
-  }
-
-  .review-form .star-rating input:hover~label,
-  .review-form .star-rating input:focus~label,
-  .review-form .star-rating input:checked:hover~label {
-    color: #ffca28;
-  }
-
-  .review-form .form-group button {
-    align-self: flex-end;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 0.5rem;
-    background-color: var(--primary-color);
-    color: #fff;
-    cursor: pointer;
-  }
-
-  .review-form .form-group button:hover {
-    background-color: darken(var(--primary-color), 10%);
-  }
-
+  
 }
 
 /* =================================== */
