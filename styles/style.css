@@ -1854,11 +1854,11 @@ body {
     float: right;
   }
 
-  .product-footer {
-    display: flex;
-    margin-top: 20px;
-    /* Adjust margin to separate from product-link */
-  }
+.product-footer {
+  display: flex;
+  margin-top: 20px;
+  align-items: baseline;
+}
 
   .remove-btn {
     display: flex;
