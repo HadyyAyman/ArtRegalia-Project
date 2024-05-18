@@ -2084,16 +2084,12 @@ body {
 
 .address-form {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: flex-start;
   max-width: 100%;
   margin-top: 20px;
-  background: var(--color1);
-  /* border: var(--color6); */
-  border-radius: 10px;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border: none;
 }
-
 .address-form div {
   display: flex;
   flex-wrap: wrap;
