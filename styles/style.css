@@ -1786,14 +1786,16 @@ body {
   /* CART ICON STYLING  */
   /* =================================== */
   .cart-main {
-    background-color: var(--color3);
+    background-color: var(--color1);
     min-height: 500px;
   }
 
   .cart-item-container,
   .cart-summary {
-    background-color: var(--color1);
+    background-color: var(--color2);
     margin-left: 55px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
   }
 
   .cart-item {
@@ -1870,7 +1872,7 @@ body {
     gap: 5px;
     padding-top: 7px;
     color: var(--color9);
-    background-color: var(--color1);
+    background-color: var(--color2);
     border: none;
     border-radius: 5%;
     cursor: pointer;
@@ -1988,6 +1990,130 @@ body {
     border-radius: 5px;
     box-shadow: 0 0 5px var(--color9);
   }
+
+
+  /* WISHLIST PAGE STYLING */
+
+  .wishlist-main {
+    background-color: var(--color1);
+    padding: 150px 100px 50px 0px;
+    /* min-height: 500px; */
+  }
+
+  .wishlist-main2 {
+    background-color: var(--color1);
+    padding: 0px 100px 50px 0px;
+  }
+
+
+  .wishlist-container{
+    background-color: var(--color2);
+    margin-left: 55px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+  }
+
+  .wishlist-product {
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wishlist-details-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .product-link {
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+  }
+
+  .wishlist-details-container .product-image-container {
+    width: 72px;
+  }
+
+  .product-image-container img {
+    float: left;
+  }
+
+  .product-info {
+    flex: 1;
+    margin-left: 20px;
+  }
+
+  .product-name {
+    color: var(--color7);
+  }
+
+  .product-info .product-description {
+    background: none;
+    color: var(--color9);
+  }
+
+  .product-price {
+    font-weight: bold;
+    float: right;
+  }
+
+.product-footer {
+  display: flex;
+  margin-top: 20px;
+  align-items: baseline;
+}
+
+  .remove-btn {
+    display: flex;
+    gap: 5px;
+    padding-top: 7px;
+    color: var(--color9);
+    background-color: var(--color2);
+    border: none;
+    border-radius: 5%;
+    cursor: pointer;
+    font-weight: bolder;
+    transition: .5s;
+    align-items: center;
+  }
+
+  .remove-btn:hover {
+    background: var(--color9);
+    color: var(--color4);
+    font-weight: bolder;
+    border-radius: 5px;
+    box-shadow: 0 0 5px var(--color9);
+  }
+
+  .remove-btn .fa-trash-can {
+    position: relative;
+    bottom: 1px;
+  }
+
+  .wishlist-btn{
+    display: inline-block;
+    padding: 10px 20px;
+    color: var(--color4);
+    background-color: var(--color7);
+    font-size: 16px;
+    font-weight: bolder;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .5s;
+    letter-spacing: 2px;
+  }
+
+  .wishlist-btn:hover{
+    background: var(--color9);
+    color: var(--color4);
+    box-shadow: 0 0 5px var(--color9),
+      0 0 25px var(--color9);
+  }
+
 
   /* =================================== */
   /* CHECKOUT PAGE STYLING  */
