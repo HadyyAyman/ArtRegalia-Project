@@ -1133,7 +1133,7 @@ body {
     align-items: center;
   }
 
-  .login-page2{
+  .login-page2 {
     min-height: 1600px;
     width: 800px;
     margin: auto;
@@ -1147,7 +1147,7 @@ body {
     width: 100%;
   }
 
-  .login-page2 .form{
+  .login-page2 .form {
     margin-top: 540px;
     margin-bottom: 50px;
     padding: 20px;
@@ -1160,45 +1160,49 @@ body {
   .checkbox-container {
     display: flex;
     flex-direction: column;
-    margin-right: 20px; /* Add some space between checkboxes and form */
-}
+    margin-right: 20px;
+    /* Add some space between checkboxes and form */
+  }
 
-.checkbox {
+  .checkbox {
     display: flex;
     flex-direction: column;
-    padding-right: 260px; /* Adjust the padding to ensure checkboxes are stacked */
-    margin-bottom: 10px; /* Add some space between checkboxes */
-}
+    padding-right: 260px;
+    /* Adjust the padding to ensure checkboxes are stacked */
+    margin-bottom: 10px;
+    /* Add some space between checkboxes */
+  }
 
-.checkbox label {
+  .checkbox label {
     position: relative;
     cursor: pointer;
     padding-left: 25px;
     color: var(--color4);
 }
 
-.checkbox input[type="checkbox"] {
+  .checkbox input[type="checkbox"] {
     position: absolute;
     opacity: 0;
-}
+  }
 
-.checkbox label:before {
+  .checkbox label:before {
     content: '';
     position: absolute;
     left: 0;
     top: 0;
     width: 18px;
     height: 18px;
-    border: 2px solid #289bb8; /* Border color */
+    border: 2px solid #289bb8;
+    /* Border color */
     border-radius: 3px;
     background-color: transparent;
-}
+  }
 
 .checkbox input[type="checkbox"]:checked + label:before {
     background-color: var(--color8); /* Checkbox color when checked */
 }
 
-.checkbox label:after {
+  .checkbox label:after {
     content: '';
     position: absolute;
     top: 4px;
@@ -1209,13 +1213,13 @@ body {
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
     display: none;
-}
+  }
 
-.checkbox input[type="checkbox"]:checked + label:after {
+  .checkbox input[type="checkbox"]:checked+label:after {
     display: block;
-}
+  }
 
-  .select-container{
+  .select-container {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -1632,7 +1636,6 @@ body {
   .dropdown:is(:hover, :focus) {
     text-decoration: underline;
     background-color: var(--color8);
-    border: 0;
     color: var(--color2);
   }
 
@@ -1668,7 +1671,6 @@ body {
     display: block;
     border-bottom: 1px solid var(--color6);
   }
-
 
 
   .sort-dropdown-item:hover {
@@ -1777,53 +1779,53 @@ body {
   margin-left: 55px;
 }
 
-.cart-item{
-  padding-top: 120px;
-  display: grid;
-  grid-template-columns: 60% 40%;
-  /* gap: 10px; */
-}
+  .cart-item {
+    padding-top: 120px;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    /* gap: 10px; */
+  }
 
-.cart-product {
-  /* border: 1px solid #ccc; */
-  border-radius: 5px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-}
+  .cart-product {
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
 
-.cart-product-header {
-  margin-bottom: 20px;
-}
+  .cart-product-header {
+    margin-bottom: 20px;
+  }
 
 .cart-product-header h2, .cart-summary-container h2{
   color: var(--color9);
 }
 
-.product-details-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+  .product-details-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-.product-link{
-  display: flex;
-  width: 100%;
-  text-decoration: none;
-}
+  .product-link {
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+  }
 
-.product-details-container .product-image-container{
-  width: 72px;
-}
+  .product-details-container .product-image-container {
+    width: 72px;
+  }
 
-.product-image-container img{
-  float: left;
-}
+  .product-image-container img {
+    float: left;
+  }
 
-.product-info {
-  flex: 1;
-  margin-left: 20px;
-}
+  .product-info {
+    flex: 1;
+    margin-left: 20px;
+  }
 
 .product-name {
   color: var(--color7);
@@ -1838,10 +1840,11 @@ body {
   float: right;
 }
 
-.product-footer {
-  display: flex;
-  margin-top: 20px; /* Adjust margin to separate from product-link */
-}
+  .product-footer {
+    display: flex;
+    margin-top: 20px;
+    /* Adjust margin to separate from product-link */
+  }
 
 .remove-btn {
   display: flex;
@@ -1867,14 +1870,14 @@ body {
     0 0 100px var(--color9);
 }
 
-.quantity-form {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 10px;
-  border-bottom: none;
+  .quantity-form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    border-bottom: none;
 
-}
+  }
 
 .quantity-form .quantity-value{
   color: var(--color9);
@@ -1905,23 +1908,23 @@ body {
     0 0 100px var(--color9);
 } 
 
-.quantity-value {
-  margin: 0 10px;
-}
+  .quantity-value {
+    margin: 0 10px;
+  }
 
-.cart-summary {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* border: 1px solid #ccc; */
-  border-radius: 5px;
-  padding: 20px;
-  margin-right: 60px;
-}
+  .cart-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+    padding: 20px;
+    margin-right: 60px;
+  }
 
-.cart-summary-details {
-  text-align: left;
-}
+  .cart-summary-details {
+    text-align: left;
+  }
 
 .subtotal {
   color: var(--color9);
@@ -1933,17 +1936,17 @@ body {
   width: 100%;
 }
 
-.subtotal .price{
-  font-weight: bolder;
-}
+  .subtotal .price {
+    font-weight: bolder;
+  }
 
-.cart-summary-container{
-  width: 100%;
-}
+  .cart-summary-container {
+    width: 100%;
+  }
 
-.cart-summary-details .checkout-btn{
-  width: 100%;
-}
+  .cart-summary-details .checkout-btn {
+    width: 100%;
+  }
 
 .checkout-btn a.btn {
   position: relative;
@@ -3182,9 +3185,9 @@ delivery-option .button {
     font-size: 28px;
   }
 
-    .layout.c-2 {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-    }
+  .layout.c-2 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
+}
