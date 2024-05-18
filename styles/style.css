@@ -1585,6 +1585,14 @@ body {
     /* background: var(--color2); */
   }
 
+  .craft-main .container {
+
+    margin: 0 auto;
+    padding: 20px;
+    background-color: unset;
+    box-shadow: unset;
+  }
+
   .filter-form {
     align-items: unset;
     flex-direction: column;
@@ -2885,6 +2893,98 @@ body {
     background-color: var(--color9);
     color: var(--color2);
     text-decoration: none;
+  }
+
+  /* =================================== */
+  /* Shops styling  */
+  /* =================================== */
+
+  .shops-main {
+    min-height: 500px;
+    padding-top: 80px;
+  }
+
+  .shops-main .container {
+    /* max-width: unset; */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: unset;
+    box-shadow: unset;
+  }
+
+  .shop-card {
+    border: 0;
+    background: var(--color3);
+    border-radius: 12px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .shop-btn {
+    background-color: var(--color8);
+    border: 0;
+  }
+
+  .btn-primary {
+    --bs-btn-active-bg: var(--color6);
+  }
+
+  .shop-btn:is(:hover) {
+    background: var(--color6);
+    border: 0;
+    transition: all .2s ease-in-out;
+  }
+
+  .shop-title,
+  .shop-text {
+    color: var(--color9);
+    font-weight: 500;
+  }
+
+  .shop-search {
+    width: 85%;
+    display: inline-block;
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-color: var(--color2);
+  }
+
+  .shop-search:focus {
+    border-color: var(--color2);
+    box-shadow: unset;
+  }
+
+  .shop-srch-btn {
+    border-left: 0;
+    margin-right: 10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    position: absolute;
+    border-color: var(--color2);
+  }
+
+  .shop-srch-btn:is(:hover, :focus) {
+    background-color: unset;
+    color: var(--color9);
+    border-color: var(--color2);
+  }
+
+  .shop-type {
+    width: 100%;
+    display: inline-block;
+    border-radius: 5px;
+    border-color: var(--color2);
+  }
+
+  i#sort-chevron\ shops-chevron {
+    position: relative;
+    left: 92%;
+    bottom: 30px;
+  }
+
+  .shops-type-container .shop-menu {
+    width: 356px;
+    border-radius: 5px;
   }
 
 }
