@@ -1840,11 +1840,11 @@ body {
   float: right;
 }
 
-  .product-footer {
-    display: flex;
-    margin-top: 20px;
-    /* Adjust margin to separate from product-link */
-  }
+.product-footer {
+  display: flex;
+  margin-top: 20px;
+  align-items: baseline;
+}
 
 .remove-btn {
   display: flex;
@@ -1963,6 +1963,100 @@ body {
 }
 
 .checkout-btn a.btn:hover {
+  background: var(--color9);
+  color: var(--color4);
+  font-weight: bolder;
+  border-radius: 5px;
+  box-shadow: 0 0 5px var(--color9),
+    0 0 25px var(--color9),
+    0 0 50px var(--color9),
+    0 0 100px var(--color9);
+}
+
+/* WISHLIST PAGE STYLING */
+
+.wishlist-main{
+  background-color: var(--color3);
+  /* min-height: ; */
+  padding: 130px 100px 50px 0px;
+}
+
+.wishlist-main2{
+  background-color: var(--color3);
+  padding: 0px 100px 100px 0px;
+}
+
+.wishlist-container{
+  background-color: var(--color1);
+  margin-left: 55px;
+}
+
+.wishlist-product {
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+.wishlist-details-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .product-link {
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+  }
+
+  .wishlist-details-container .product-image-container {
+    width: 72px;
+  }
+
+  .product-image-container img {
+    float: left;
+  }
+
+.product-info {
+    flex: 1;
+    margin-left: 20px;
+  }
+
+.product-name {
+  color: var(--color7);
+}
+
+.product-info .product-description{
+  background: none;
+  color: var(--color9);
+}
+.product-price {
+  font-weight: bold;
+  float: right;
+}
+
+.product-footer {
+  display: flex;
+  margin-top: 20px;
+  align-items: baseline;
+}
+
+.wishlist-btn{
+  display: flex;
+  gap: 5px;
+  padding-top: 7px;
+  color: var(--color9);
+  background-color: var(--color1);
+  border: none;
+  border-radius: 5%;
+  cursor: pointer;
+  font-weight: bolder;
+  transition: .5s;
+}
+
+.wishlist-btn:hover{
   background: var(--color9);
   color: var(--color4);
   font-weight: bolder;
@@ -2567,54 +2661,6 @@ delivery-option .button {
 .terms-link:hover {
   text-decoration: underline;
 }
-
-
-/* .summary-container {
-  padding: 20px 0;
-}
-
-.summary-section {
-  margin-bottom: 20px;
-}
-
-.summary-section h2 {
-  margin-bottom: 10px;
-  font-size: 18px;
-  color: #333;
-}
-
-.summary-section div {
-  margin-bottom: 10px;
-}
-
-.summary-section input {
-  width: 200px;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.summary-section button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.summary-section button:hover {
-  background-color: #0056b3;
-}
-
-.terms-link {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.terms-link:hover {
-  text-decoration: underline;
-} */
 
 }
 /* =================================== */
