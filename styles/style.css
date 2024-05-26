@@ -1758,7 +1758,8 @@ body {
   }
 
   .btn-apply-filter:hover {
-    background-color: var(--color6);
+    /* background-color: var(--color6); */  
+    color: var(--color7);
   }
 
   /* Show More styling  */
@@ -1779,7 +1780,7 @@ body {
 
   .show-more:hover {
     text-decoration: underline;
-    background: var(--color8);
+    
   }
 
   /* =================================== */
