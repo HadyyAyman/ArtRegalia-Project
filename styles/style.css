@@ -1863,11 +1863,11 @@ body {
     float: right;
   }
 
-.product-footer {
-  display: flex;
-  margin-top: 20px;
-  align-items: baseline;
-}
+  .product-footer {
+    display: flex;
+    margin-top: 20px;
+    align-items: baseline;
+  }
 
   .remove-btn {
     display: flex;
@@ -2008,7 +2008,7 @@ body {
   }
 
 
-  .wishlist-container{
+  .wishlist-container {
     background-color: var(--color2);
     margin-left: 55px;
     border-radius: 4px;
@@ -2061,11 +2061,11 @@ body {
     float: right;
   }
 
-.product-footer {
-  display: flex;
-  margin-top: 20px;
-  align-items: baseline;
-}
+  .product-footer {
+    display: flex;
+    margin-top: 20px;
+    align-items: baseline;
+  }
 
   .remove-btn {
     display: flex;
@@ -2094,7 +2094,7 @@ body {
     bottom: 1px;
   }
 
-  .wishlist-btn{
+  .wishlist-btn {
     display: inline-block;
     padding: 10px 20px;
     color: var(--color4);
@@ -2109,7 +2109,7 @@ body {
     letter-spacing: 2px;
   }
 
-  .wishlist-btn:hover{
+  .wishlist-btn:hover {
     background: var(--color9);
     color: var(--color4);
     box-shadow: 0 0 5px var(--color9),
@@ -3716,8 +3716,164 @@ body {
     font-weight: 500;
   }
 
+  /* =================================== */
+  /* COMMUNITY STYLING  */
+  /* =================================== */
 
+  .com-container {
+    min-height: 500px;
+    padding-top: 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
+  .carousel.pos-slide {
+    height: 450px !important;
+  }
+
+  .post-carousel-control-prev {
+    left: -75px;
+  }
+
+  .post-carousel-control-next {
+    right: -75px;
+  }
+
+  .com-btn {
+    display: inline-block;
+    max-width: 200px;
+    justify-self: center;
+    grid-row: 3;
+    grid-column: 2 / 4;
+    margin-top: 50px;
+    background: var(--color8);
+    border: 1px solid var(--color8);
+  }
+
+  .com-btn:hover {
+    background: var(--color5);
+    color: var(--color9);
+    font-weight: 700;
+    border: 1px dashed var(--color9);
+  }
+
+  text {
+    transform: translateX(-22%);
+  }
+
+  h2 {
+    color: var(--color9);
+  }
+
+  /* =================================== */
+  /* BLOG STYLING*/
+  /* =================================== */
+
+  .blog-section {
+    padding-top: 6rem;
+    padding-bottom: 5rem;
+    background-image: url(/images/wallpaperflare.com_wallpaper.jpg);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    width: 1200px;
+    margin: 0 auto;
+    color: var(--color9);
+  }
+
+  .blog-section .mbr-fallback-image {
+    display: block;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+  }
+
+  .mbr-overlay {
+    background-color: #000;
+    bottom: 0;
+    left: 0;
+    opacity: 0.5;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .blog-container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .blog-row {
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+
+  .blog-section img,
+  .blog-section .item-img {
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .content-head {
+    max-width: 800px;
+  }
+
+  .blog-btn,
+  .blog-btn:active {
+    background-color: var(--color8) !important;
+    border-color: var(--color8) !important;
+    color: var(--color2) !important;
+    box-shadow: none;
+    padding: 20px;
+  }
+
+  .blog-btn:hover {
+    background-color: var(--color4) !important;
+    border-color: var(--color8) !important;
+    color: var(--color9) !important;
+    font-weight: 700;
+  }
+
+  .blog-search {
+    width: 85%;
+    display: inline-block;
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-color: var(--color2);
+    /* box-shadow: 0 0 5px rgba(0, 0, 0, .2); */
+  }
+
+  .blog-srch-btn {
+    border-left: 0;
+    margin-right: 10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    position: absolute;
+    border-color: var(--color2);
+    background: var(--color9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: var(--color2);
+  }
+
+  .form-control.blog-search:focus {
+    color: var(--color9);
+    font-weight: 700;
+    background-color: #fff;
+    border-color: var(--color2);
+    outline: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  }
 }
 
 /* =================================== */
