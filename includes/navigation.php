@@ -28,11 +28,11 @@
           </li>
 
           <li class="navbar-item nav-item">
-            <a href="community.html" class="navbar-links nav-link">Community</a>
+            <a href="community.php" class="navbar-links nav-link">Community</a>
           </li>
 
           <li class="navbar-item nav-item">
-            <a href="Artists-page.html" class="navbar-links desk nav-link">Artists</a>
+            <a href="Artists-page.php" class="navbar-links desk nav-link">Artists</a>
             <input type="checkbox" id="showArtists" class="dropdown-toggle">
             <label for="showArtists" class="navbar-links">Artists <i class="fa-solid fa-caret-down"></i></label>
             <ul class="drop-menu">
@@ -45,7 +45,7 @@
           </li>
 
           <li class="navbar-item nav-item">
-            <a href="craft-page.html" class="navbar-links desk nav-link">Craftsmen</a>
+            <a href="craft-page.php" class="navbar-links desk nav-link">Craftsmen</a>
             <input type="checkbox" id="showMega" class="dropdown-toggle">
             <label for="showMega" class="navbar-links">Craftsmen<i class="fa-solid fa-caret-down"></i></label>
             <div class="mega-box">
@@ -86,15 +86,15 @@
           </li>
 
           <li class="navbar-item nav-item">
-            <a href="shopall.html" class="navbar-links nav-link">Shop all</a>
+            <a href="shopall.php" class="navbar-links nav-link">Shop all</a>
           </li>
 
           <li class="navbar-item nav-item">
-            <a href="shops.html" class="navbar-links nav-link">Shops</a>
+            <a href="shops.php" class="navbar-links nav-link">Shops</a>
           </li>
 
           <li class="navbar-item nav-item">
-            <a href="about.html" class="navbar-links nav-link">About Us</a>
+            <a href="about.php" class="navbar-links nav-link">About Us</a>
           </li>
 
         </ul>
@@ -122,7 +122,7 @@
           </li>
 
           <li class="nav-item ms-2">
-            <a href="cart.html" class="nav-action-btn nav-link">
+            <a href="cart.php" class="nav-action-btn nav-link">
               <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
               <span class="icon-badge-btn">4</span>
               <data class="nav-action-text" value="400.00">Basket: <strong>400EGP</strong></data>
@@ -142,7 +142,7 @@
               <li><a class="nav-link" href="#"><i class="fa-solid fa-heart"></i>Wishlist</a></li>
               <li><a class="nav-link" href="#"><i class="fa-solid fa-circle-question"></i>Help</a></li>
               <li><a class="nav-link" href="#"><i class="fa-solid fa-gears"></i>Settings</a></li>
-              <li><a class="nav-link" href="Registration.html"><i class="fa-solid fa-lock"></i>Sign-in/Sign-up</a></li>
+              <li><a class="nav-link" href="Registration.php"><i class="fa-solid fa-lock"></i>Sign-in/Sign-up</a></li>
             </ul>
           </li>
         </ul>
