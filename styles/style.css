@@ -1125,8 +1125,9 @@ body {
   .login-page {
     min-height: 800px;
     width: 400px;
-    margin: auto;
-    overflow: hidden;
+    /* margin: auto; */
+    /* overflow: hidden; */
+    padding-top: 100px;
   }
 
   .register-form {
@@ -1142,10 +1143,15 @@ body {
   }
 
   .login-page2 {
-    min-height: 1600px;
-    width: 800px;
+    min-height: 1200px;
+    width: 100%;
     margin: auto;
     overflow: hidden;
+    background: var(--color8);
+  }
+
+  .register-footer {
+    margin-top: unset !important;
   }
 
   .register-form2 {
@@ -1155,37 +1161,50 @@ body {
     width: 100%;
   }
 
+  .artisan-register {
+    display: grid;
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .artisan-register h2 {
+    color: var(--color2);
+    font-weight: 700;
+  }
+
   .login-page2 .form {
-    margin-top: 540px;
+    width: 100%;
+    margin-top: 200px;
     margin-bottom: 50px;
     padding: 20px;
     box-sizing: border-box;
     background: var(--color8);
-    border-radius: 10px;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    /* border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6); */
   }
 
   .checkbox-container {
     display: flex;
-    flex-direction: column;
-    margin-right: 20px;
+    margin: 20px auto;
+    gap: 100px;
+    width: 100%;
     /* Add some space between checkboxes and form */
   }
 
   .checkbox {
     display: flex;
-    flex-direction: column;
-    padding-right: 260px;
-    /* Adjust the padding to ensure checkboxes are stacked */
     margin-bottom: 10px;
-    /* Add some space between checkboxes */
+    justify-content: center;
+    width: 100%;
   }
 
-  .checkbox label {
+  .checkbox-container .checkbox label {
     position: relative;
     cursor: pointer;
     padding-left: 25px;
-    color: var(--color4);
+    color: var(--color2);
   }
 
   .checkbox input[type="checkbox"] {
@@ -1193,21 +1212,21 @@ body {
     opacity: 0;
   }
 
-  .checkbox label:before {
+  .checkbox-container .checkbox label:before {
     content: '';
     position: absolute;
     left: 0;
     top: 0;
     width: 18px;
     height: 18px;
-    border: 2px solid #289bb8;
+    border: 2px solid var(--color2);
     /* Border color */
     border-radius: 3px;
     background-color: transparent;
   }
 
   .checkbox input[type="checkbox"]:checked+label:before {
-    background-color: var(--color8);
+    background-color: var(--color2);
     /* Checkbox color when checked */
   }
 
@@ -1218,7 +1237,7 @@ body {
     left: 6px;
     width: 5px;
     height: 10px;
-    border: solid white;
+    border: solid var(--color9);
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
     display: none;
@@ -1229,8 +1248,8 @@ body {
   }
 
   .select-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
     width: 100%;
   }
@@ -1276,6 +1295,23 @@ body {
     border-radius: 10px;
   }
 
+  .artisan-form {
+    margin-top: 50px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: var(--color8);
+    box-sizing: border-box;
+    box-shadow: unset;
+    border-radius: unset;
+  }
+
   .form input {
     width: 100%;
     padding: 10px 0;
@@ -1289,9 +1325,14 @@ body {
 
   }
 
-  h2,
+  .register-form h2,
+  .register-form h5 {
+    color: var(--color2) !important;
+  }
+
+  .artisan-register h2,
   h5 {
-    color: var(--color4);
+    color: var(--color2) !important;
   }
 
   .form .message {
@@ -1305,8 +1346,9 @@ body {
     text-decoration: none;
   }
 
-  .form .btn {
+  .form input.btn {
     position: relative;
+    width: 200px;
     display: inline-block;
     padding: 10px 20px;
     color: var(--color2);
@@ -1316,10 +1358,27 @@ body {
     overflow: hidden;
     transition: .5s;
     margin-top: 15px;
-    letter-spacing: 2px
+    letter-spacing: 2px;
   }
 
-  .form .btn:hover {
+  .artisan-register-btn {
+    position: relative;
+    width: 200px;
+    display: inline-block;
+    padding: 10px 20px;
+    color: var(--color2);
+    font-size: 16px;
+    font-weight: bolder;
+    text-decoration: solid;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 15px;
+    letter-spacing: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .form input.btn:hover {
     background: var(--color2);
     color: var(--color9);
     font-weight: bolder;
@@ -1330,12 +1389,12 @@ body {
       0 0 100px var(--color2);
   }
 
-  .form .btn span {
+  .form input.btn span {
     position: absolute;
     display: block;
   }
 
-  .form .btn span:nth-child(1) {
+  .form input.btn span:nth-child(1) {
     top: 0;
     left: -100%;
     width: 100%;
@@ -1355,7 +1414,7 @@ body {
     }
   }
 
-  .form .btn span:nth-child(2) {
+  .form input.btn span:nth-child(2) {
     top: -100%;
     right: 0;
     width: 2px;
@@ -1376,7 +1435,7 @@ body {
     }
   }
 
-  .form .btn span:nth-child(3) {
+  .form input.btn span:nth-child(3) {
     bottom: 0;
     right: -100%;
     width: 100%;
@@ -1397,7 +1456,7 @@ body {
     }
   }
 
-  .form .btn span:nth-child(4) {
+  .form input.btn span:nth-child(4) {
     bottom: -100%;
     left: 0;
     width: 2px;
@@ -3759,10 +3818,6 @@ body {
 
   text {
     transform: translateX(-22%);
-  }
-
-  h2 {
-    color: var(--color9);
   }
 
   /* =================================== */

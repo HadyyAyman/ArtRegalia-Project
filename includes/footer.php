@@ -22,24 +22,24 @@
           <h4 class="c-nav-tool_title">Menu</h4>
           <ul class="c-nav-tool_list">
             <li>
-              <a href="index.html" class="c-link">Home</a>
+              <a href="index.php" class="c-link">Home</a>
             </li>
 
             <li>
-              <a href="community.html" class="c-link">Community</a>
+              <a href="community.php" class="c-link">Community</a>
             </li>
 
             <li>
-              <a href="about.html" class="c-link">About Us</a>
+              <a href="about.php" class="c-link">About Us</a>
             </li>
             <li>
-              <a href="blog.html" class="c-link">Blog</a>
+              <a href="blog.php" class="c-link">Blog</a>
             </li>
             <li>
-              <a href="shops.html" class="c-link">Shops</a>
+              <a href="shops.php" class="c-link">Shops</a>
             </li>
             <li>
-              <a href="shopall.html" class="c-link">Shop all</a>
+              <a href="shopall.php" class="c-link">Shop all</a>
             </li>
           </ul>
         </nav>
@@ -71,7 +71,7 @@
             </li>
 
             <li class="c-nav-tool_item">
-              <a href="Registration.html" class="c-link">
+              <a href="Registration.php" class="c-link">
                 Sign Up
               </a>
             </li>
