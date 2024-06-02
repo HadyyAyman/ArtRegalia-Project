@@ -1819,7 +1819,7 @@ body {
   }
 
   .btn-apply-filter:hover {
-    /* background-color: var(--color6); */  
+    /* background-color: var(--color6); */
     color: var(--color7);
   }
 
@@ -1841,7 +1841,7 @@ body {
 
   .show-more:hover {
     text-decoration: underline;
-    
+
   }
 
   /* =================================== */
@@ -3828,7 +3828,7 @@ body {
   .blog-section {
     padding-top: 6rem;
     padding-bottom: 5rem;
-    background-image: url(/images/wallpaperflare.com_wallpaper.jpg);
+    background-image: url("../images/wallpaperflare.com_wallpaper.jpg");
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -3929,6 +3929,53 @@ body {
     border-color: var(--color2);
     outline: 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  }
+
+  /* =================================== */
+  /* BLOG form btn STYLING*/
+  /* =================================== */
+
+  button.floating-btn {
+    width: 70px;
+    height: 70px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color8);
+    border: 0;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 99;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .2);
+  }
+
+  button.floating-btn:hover {
+    background-color: var(--color7);
+  }
+
+  .ri-quill-pen-line {
+    color: var(--color2);
+  }
+
+  /* =================================== */
+  /* BLOG form STYLING*/
+  /* =================================== */
+
+  main.post_main {
+    min-height: 500px;
+    padding-top: 120px;
+  }
+
+  .blog-posts-form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: auto;
+    gap: 20px;
+    border: 0;
   }
 }
 

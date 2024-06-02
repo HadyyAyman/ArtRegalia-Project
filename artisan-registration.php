@@ -1,11 +1,14 @@
-<?php include "includes/db.php" ?>
+<?php
+ob_start(); // Start output buffering
+include "includes/db.php";
+?>
 
-<?php include "includes/head.php" ?>
+<?php include "includes/head.php"; ?>
 
   <!-- =============================== -->
   <!-- Navigation bar -->
   <!-- =============================== -->
-  <?php include "includes/navigation.php" ?>
+  <?php include "includes/navigation.php"; ?>
 
 
 <?php 
@@ -179,7 +182,7 @@ if(!empty($artisan_brandname) && !empty($artisan_firstname) && !empty($artisan_u
           <span></span>
           <span></span>
         </input>
-        <p class="message">Already registered? <a href="login.html">Sign In</a></p>
+        <p class="message">Already registered? <a href="login.php">Sign In</a></p>
       </form>
     </div>
   </main>

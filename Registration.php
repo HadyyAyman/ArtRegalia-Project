@@ -1,10 +1,14 @@
-<?php include "includes/db.php" ?>
 
-<?php include "includes/head.php" ?>
+<?php
+ob_start(); // Start output buffering
+include "includes/db.php";
+?>
+
+<?php include "includes/head.php"; ?>
   <!-- =============================== -->
   <!-- Navigation bar -->
   <!-- =============================== -->
-  <?php include "includes/navigation.php" ?>
+  <?php include "includes/navigation.php"; ?>
 
 
   <?php 
@@ -27,11 +31,11 @@
       $user_password = mysqli_real_escape_String($connection, $user_password);
 
       //encrypt password
-      $user_password = password_hash($artisan_password, PASSWORD_BCRYPT);
+      $user_password = password_hash($user_password, PASSWORD_BCRYPT);
 
       //validate inputs
       $query = "INSERT INTO users (user_firstName, user_lastName, username, user_email, user_password, user_role) ";
-      $query .= "VALUES ('{$user_firstname}', '{$user_lastname}', '{$user_username}', '{$user_email}', '{$user_password}', 'User' )";
+      $query .= "VALUES ('{$user_firstname}', '{$user_lastname}', '{$user_username}', '{$user_email}', '{$user_password}', 'user' )";
       $registration_query = mysqli_query($connection, $query);
       if(!$registration_query){die("Query Failed" . mysqli_error($connection));}
       $message = "<script> alert('Registration has been submitted.')</script>";
