@@ -1,3 +1,20 @@
+<?php
+
+function displayUsername() {
+  if (isset($_SESSION['user_type'])) {
+      if ($_SESSION['user_type'] == 'admin' || $_SESSION['user_type'] == 'user') {
+          return $_SESSION['username'];
+      } else if ($_SESSION['user_type'] == 'artist' || $_SESSION['user_type'] == 'craftsman') {
+          return $_SESSION['artisan_brand'];
+      }
+  } else {
+      return "View Profile"; // Default text when no user is logged in
+  }
+}
+?>
+
+<?php  include "./admin/fetch_categories.php";?>
+
 <header class="header" data-header>
     <div class="nav-container">
 
@@ -23,6 +40,12 @@
 
         <ul class="navbar-list navbar-nav">
 
+        <?php if (isset($_SESSION['user_type']) && in_array($_SESSION['user_type'], ['admin'])): ?>
+          <li class="navbar-item nav-item">
+            <a href="./admin/admin_home.php" class="navbar-links nav-link">Admin</a>
+          </li>
+          <?php endif; ?>
+
           <li class="navbar-item nav-item">
             <a href="index.php" class="navbar-links nav-link">Home</a>
           </li>
@@ -36,11 +59,12 @@
             <input type="checkbox" id="showArtists" class="dropdown-toggle">
             <label for="showArtists" class="navbar-links">Artists <i class="fa-solid fa-caret-down"></i></label>
             <ul class="drop-menu">
-              <li><a class="dropdown-item" href="#">Street Art</a></li>
-              <li><a class="dropdown-item" href="#">Digital Art</a></li>
-              <li><a class="dropdown-item" href="#">Portrait Artists</a></li>
-              <li><a class="dropdown-item" href="#">Wood Artists</a></li>
-              <li><a class="dropdown-item" href="#">Muralists</a></li>
+            <?php 
+
+             foreach($categories['artist']['main'] as $artistCategory):
+             echo "<li><a class='dropdown-item' href='#'> {$artistCategory['category_title']} </a></li>";
+             endforeach;
+            ?>
             </ul>
           </li>
 
@@ -50,37 +74,18 @@
             <label for="showMega" class="navbar-links">Craftsmen<i class="fa-solid fa-caret-down"></i></label>
             <div class="mega-box">
               <div class="content">
+              <?php foreach ($categories['craftsman']['main'] as $mainCategory): ?>
                 <div class="row">
-                  <header>Bags</header>
+                <header><?php echo $mainCategory['category_title']; ?></header>
                   <ul class="mega-links">
-                    <li><a class="dropdown-item" href="#">Macramé</a></li>
-                    <li><a class="dropdown-item" href="#">Beaded</a></li>
-                    <li><a class="dropdown-item" href="#">Leather</a></li>
-                    <li><a class="dropdown-item" href="#">Canvas</a></li>
+                  <?php if (isset($categories['craftsman']['sub'][$mainCategory['category_id']])): ?>
+                            <?php foreach ($categories['craftsman']['sub'][$mainCategory['category_id']] as $subCategory): ?>
+                                <li><a class="dropdown-item" href="#"><?php echo $subCategory['category_title']; ?></a></li>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                   </ul>
                 </div>
-                <div class="row">
-                  <header>Bracelets</header>
-                  <ul class="mega-links">
-                    <li><a class="dropdown-item" href="#">Macramé</a></li>
-                    <li><a class="dropdown-item" href="#">Beaded</a></li>
-                    <li><a class="dropdown-item" href="#">Leather</a></li>
-                    <li><a class="dropdown-item" href="#">Metal</a></li>
-                    <li><a class="dropdown-item" href="#">Charm</a></li>
-                    <li><a class="dropdown-item" href="#">Woven</a></li>
-                  </ul>
-                </div>
-                <div class="row">
-                  <header>Home Decor</header>
-                  <ul class="mega-links">
-                    <li><a class="dropdown-item" href="#">Textiles</a></li>
-                    <li><a class="dropdown-item" href="#">Pottery</a></li>
-                    <li><a class="dropdown-item" href="#">Woodcraft</a></li>
-                    <li><a class="dropdown-item" href="#">Basketry</a></li>
-                    <li><a class="dropdown-item" href="#">Lighting</a></li>
-                    <li><a class="dropdown-item" href="#">Paintings</a></li>
-                  </ul>
-                </div>
+                <?php endforeach; ?>
               </div>
             </div>
           </li>
@@ -138,11 +143,15 @@
             <label for="showProfile" class="navbar-links"><i class="fa-solid fa-user" aria-hidden="true"></i>Profile <i
                 class="fa-solid fa-caret-down"></i></label>
             <ul class="drop-menu profile">
-              <li><a class="nav-link" href="#"><i class="fa-solid fa-user"></i>View Profile</a></li>
+              <li><a class="nav-link" href="#"><i class="fa-solid fa-user"></i><?php echo displayUsername();?></a></li>
               <li><a class="nav-link" href="#"><i class="fa-solid fa-heart"></i>Wishlist</a></li>
               <li><a class="nav-link" href="#"><i class="fa-solid fa-circle-question"></i>Help</a></li>
               <li><a class="nav-link" href="#"><i class="fa-solid fa-gears"></i>Settings</a></li>
-              <li><a class="nav-link" href="Registration.php"><i class="fa-solid fa-lock"></i>Sign-in/Sign-up</a></li>
+              <?php if (isset($_SESSION['username'])): ?>
+                            <li><a class="nav-link" href="logout.php"><i class="fa-solid fa-lock"></i>Sign-out</a></li>
+                        <?php else: ?>
+                            <li><a class="nav-link" href="login.php"><i class="fa-solid fa-lock"></i>Sign-in/Sign-up</a></li>
+                        <?php endif; ?>
             </ul>
           </li>
         </ul>

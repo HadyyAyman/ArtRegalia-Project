@@ -1,10 +1,14 @@
-<?php include "includes/db.php" ?>
+<?php
+ob_start(); // Start output buffering
+include "includes/db.php";
+session_start();
+?>
 
-<?php include "includes/head.php" ?>
+<?php include "includes/head.php"; ?>
   <!-- =============================== -->
   <!-- Navigation bar -->
   <!-- =============================== -->
-  <?php include "includes/navigation.php" ?>
+  <?php include "includes/navigation.php"; ?>
   <!-- =============================== -->
   <!-- split landing page -->
   <!-- =============================== -->
