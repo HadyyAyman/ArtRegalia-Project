@@ -15,70 +15,73 @@ include "includes/db.php";
 
 if(isset($_POST['artisan_create'])){
 
+// common users table data
+$user_gender = $_POST["gender"];
+$user_firstname = $_POST["user_firstname"];
+$user_lastname = $_POST["user_lastname"];
+$username = $_POST["username"];
+$user_email = $_POST["user_email"];
+$user_password = $_POST["user_password"];
+$user_address = $_POST['user_address'];
+$user_phone = $_POST['user_phone'];
+  
+// specific artisan table data
 $artist = isset($_POST['artist']) ? 1 : 0;
 $craftsmen = isset($_POST['craftsmen']) ? 1 : 0;
-
-$artisan_brandname = $_POST['artisan_brandname'];
-$artisan_firstname = $_POST['artisan_firstname'];
-$artisan_lastname = $_POST['artisan_lastname'];
-$artisan_username = $_POST['artisan_username'];
-$artisan_email = $_POST['artisan_email'];
-$artisan_password = $_POST['artisan_password'];
-$artisan_mobile = $_POST['artisan_mobile'];
-$artisan_phone = $_POST['artisan_phone'];
-
+$brand_name = $_POST['brand_name'];
 $artisan_facebook = $_POST['artisan_facebook'];
 $artisan_instagram = $_POST['artisan_instagram'];
 $artisan_tiktok = $_POST['artisan_tiktok'];
 $artisan_twitter = $_POST['artisan_twitter'];
 $artisan_youtube = $_POST['artisan_youtube'];
-
-
-$artisan_address1 = $_POST['artisan_address1'];
-$artisan_address2 = $_POST['artisan_address2'];
-$artisan_zipcode = $_POST['artisan_zipcode'];
 $country = $_POST['country'];
 $state = $_POST['state'];
 
-if(!empty($artisan_brandname) && !empty($artisan_firstname) && !empty($artisan_username) && !empty($artisan_email) && !empty($artisan_password) && !empty($artisan_mobile) && !empty($artisan_address1) && !empty($artisan_zipcode)){
+if(!empty($brand_name) && !empty($user_firstname) && !empty($username) && !empty($user_email) && !empty($user_password) && !empty($user_address) ){
 
   //clean inputs
-  $artisan_brandname = mysqli_real_escape_string($connection, $artisan_brandname);
-  $artisan_firstname = mysqli_real_escape_string($connection, $artisan_firstname);
-  $artisan_lastname = mysqli_real_escape_string($connection, $artisan_lastname);
-  $artisan_username = mysqli_real_escape_string($connection, $artisan_username);
-  $artisan_email = mysqli_real_escape_string($connection, $artisan_email);
-  $artisan_password = mysqli_real_escape_string($connection, $artisan_password);
-  $artisan_mobile = mysqli_real_escape_string($connection, $artisan_mobile);
-  $artisan_phone = mysqli_real_escape_string($connection, $artisan_phone);
+  $brand_name = mysqli_real_escape_string($connection, $brand_name);
+  $user_firstname = mysqli_real_escape_string($connection, $user_firstname);
+  $user_lastname = mysqli_real_escape_string($connection, $user_lastname);
+  $username = mysqli_real_escape_string($connection, $username);
+  $user_email = mysqli_real_escape_string($connection, $user_email);
+  $user_password = mysqli_real_escape_string($connection, $user_password);
+
+  $user_phone = mysqli_real_escape_string($connection, $user_phone);
   $artisan_facebook = mysqli_real_escape_string($connection, $artisan_facebook);
   $artisan_instagram = mysqli_real_escape_string($connection, $artisan_instagram);
   $artisan_tiktok = mysqli_real_escape_string($connection, $artisan_tiktok);
   $artisan_twitter = mysqli_real_escape_string($connection, $artisan_twitter);
   $artisan_youtube = mysqli_real_escape_string($connection, $artisan_youtube);
-  $artisan_address1 = mysqli_real_escape_string($connection, $artisan_address1);
-  $artisan_address2 = mysqli_real_escape_string($connection, $artisan_address2);
-  $artisan_zipcode = mysqli_real_escape_string($connection, $artisan_zipcode);
+  $user_address = mysqli_real_escape_string($connection, $user_address);
+
 
   //encrypt password
-  $artisan_password = password_hash($artisan_password, PASSWORD_BCRYPT);
+  $user_password = password_hash($user_password, PASSWORD_BCRYPT);
 
   
-  // validate inputs 
-  $query = "INSERT INTO artisans (is_artist, is_craftsmen, artisan_brand, artisan_firstname, artisan_lastname,
-  artisan_username, artisan_email, artisan_password, artisan_mobile, artisan_phone, artisan_facebook, 
-  artisan_instagram, artisan_tiktok, artisan_twitter, artisan_youtube, artisan_address1, artisan_address2,
-  artisan_zipcode, artisan_country, artisan_state) ";
+   // insert user data
+   $query = "INSERT INTO users (user_gender, user_email, user_firstname, user_lastname, username, user_password, user_address, user_phone) ";
+   $query .= "VALUES ('{$user_gender}', '{$user_email}', '{$user_firstname}', '{$user_lastname}', '{$username}', '{$user_password}', '{$user_address}' , '{$user_phone}')";
+   $user_registration_query = mysqli_query($connection, $query);
 
-  $query .= "VALUES ('{$artist}' , '{$craftsmen}' , '{$artisan_brandname}' , '{$artisan_firstname}' ,
-   '{$artisan_lastname}' , '{$artisan_username}' , '{$artisan_email}' , '{$artisan_password }' , '{$artisan_mobile}',
-   '{$artisan_phone}', '{$artisan_facebook}', '{$artisan_instagram}', '{$artisan_tiktok}',
-   '{$artisan_twitter}', '{$artisan_youtube }', '{$artisan_address1}', '{$artisan_address2}', '{$artisan_zipcode}',
-   '{$country}', '{$state }')";
+   if (!$user_registration_query) {
+       die("User Query Failed" . mysqli_error($connection));
+   }
 
-  $artisan_registration_query = mysqli_query($connection, $query);
-  if(!$artisan_registration_query){die("Query Failed" . mysqli_error($connection));}
-  $message = "<script> alert('Registration has been submitted.')</script>";
+   // get the ID of the inserted user
+   $user_id = mysqli_insert_id($connection);
+
+   // insert artisan data
+   $artisan_query = "INSERT INTO artisans (artisan_ID, is_artist, is_craftsmen, brand_name, artisan_facebook, artisan_instagram, artisan_tiktok, artisan_twitter, artisan_youtube, artisan_country, artisan_state) ";
+   $artisan_query .= "VALUES ({$user_id}, '{$artist}', '{$craftsmen}', '{$brand_name}', '{$artisan_facebook}', '{$artisan_instagram}', '{$artisan_tiktok}', '{$artisan_twitter}', '{$artisan_youtube}', '{$country}', '{$state}') ";
+   $artisan_registration_query = mysqli_query($connection, $artisan_query);
+
+   if (!$artisan_registration_query) {
+       die("Artisan Query Failed" . mysqli_error($connection));
+   }
+
+   $message = "<script> alert('Registration has been submitted.')</script>";
 
    }else {
      $message = "Fields can not be empty";
@@ -110,14 +113,18 @@ if(!empty($artisan_brandname) && !empty($artisan_firstname) && !empty($artisan_u
         </div>
 
         <div class="Grid-Container">
-          <input type="text" placeholder="Brand Name*" name="artisan_brandname" />
-          <input type="text" placeholder="First Name*" name="artisan_firstname" />
-          <input type="text" placeholder="Last Name*" name="artisan_lastname" />
-          <input type="text" placeholder="User Name*" name="artisan_username" />
-          <input type="email" placeholder="Email*" name="artisan_email" />
-          <input type="password" placeholder="Password*" name="artisan_password" />
-          <input type="text" placeholder="Mobile*" name="artisan_mobile" />
-          <input type="text" placeholder="Phone*" name="artisan_phone" />
+        <select name="gender" id="registration-gender">
+          <option value="0">Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+          <input type="text" placeholder="Brand Name*" name="brand_name" />
+          <input type="text" placeholder="First Name*" name="user_firstname" />
+          <input type="text" placeholder="Last Name*" name="user_lastname" />
+          <input type="text" placeholder="User Name*" name="username" />
+          <input type="email" placeholder="Email*" name="user_email" />
+          <input type="password" placeholder="Password*" name="user_password" />
+          <input type="text" placeholder="Phone*" name="user_phone" />
         </div>
 
         <hr style="border-color: #fff;" class="mb-4">
@@ -134,44 +141,42 @@ if(!empty($artisan_brandname) && !empty($artisan_firstname) && !empty($artisan_u
         <hr style="border-color: #fff;" class="mb-4">
         <h5>Address</h5>
         <div class="Grid-Container">
-          <input type="text" placeholder="Address 1*" name="artisan_address1" />
-          <input type="text" placeholder="Address 2*" name="artisan_address2" />
-          <input type="text" placeholder="Zipcode*" name="artisan_zipcode" />
+          <input type="text" placeholder="Address *" name="user_address" />
           <div class="select-container col-12">
             <select name="country" id="country_id" class="col-6">
-              <option value="1">Country*</option>
-              <option value="2">Egypt*</option>
+              <option value="1">Country</option>
+              <option value="Egypt">Egypt</option>
             </select>
 
             <select name="state" id="state_id" class="col-6">
-              <option value="1">State*</option>
-              <option value="2">Cairo</option>
-              <option value="3">Alexandria</option>
-              <option value="4">Port Said</option>
-              <option value="5">Suez</option>
-              <option value="6">Damietta</option>
-              <option value="7">Ismailia</option>
-              <option value="8">Kafr El Sheikh</option>
-              <option value="9">Al Gharbiyah</option>
-              <option value="10"> Al Monufiyah</option>
-              <option value="11">Al Daqahliyah</option>
-              <option value="12"> Al Sharqiyah</option>
-              <option value="13">Al Qalyubiyah</option>
-              <option value="14">Al Menofiyah</option>
-              <option value="15">Giza</option>
-              <option value="16">Al Fayyum</option>
-              <option value="17">Bani Swaif</option>
-              <option value="18">Minya</option>
-              <option value="19">Assiut</option>
-              <option value="20">Sohag</option>
-              <option value="21">Qena</option>
-              <option value="22">Luxor</option>
-              <option value="23">Aswan</option>
-              <option value="24">Red Sea</option>
-              <option value="25">New Valley</option>
-              <option value="26">Mersa Matruh</option>
-              <option value="27">North Sinai</option>
-              <option value="28">South Sinai</option>
+              <option value="1">State</option>
+              <option value="Cairo">Cairo</option>
+              <option value="Alexandria">Alexandria</option>
+              <option value="Port Said">Port Said</option>
+              <option value="Suez">Suez</option>
+              <option value="Damietta">Damietta</option>
+              <option value="Ismailia">Ismailia</option>
+              <option value="Kafr El Sheikh">Kafr El Sheikh</option>
+              <option value="Al Gharbiyah">Al Gharbiyah</option>
+              <option value=" Al Monufiyah">Al Monufiyah</option>
+              <option value="Al Daqahliyah">Al Daqahliyah</option>
+              <option value="Al Sharqiyah">Al Sharqiyah</option>
+              <option value="Al Qalyubiyah">Al Qalyubiyah</option>
+              <option value="Al Menofiyah">Al Menofiyah</option>
+              <option value="Giza">Giza</option>
+              <option value="Al Fayyum">Al Fayyum</option>
+              <option value="Bani Swaif">Bani Swaif</option>
+              <option value="Minya">Minya</option>
+              <option value="Assiut">Assiut</option>
+              <option value="Sohag">Sohag</option>
+              <option value="Qena">Qena</option>
+              <option value="Luxor">Luxor</option>
+              <option value="Aswan">Aswan</option>
+              <option value="Red Sea">Red Sea</option>
+              <option value="New Valley">New Valley</option>
+              <option value="Mersa Matruh">Mersa Matruh</option>
+              <option value="North Sinai">North Sinai</option>
+              <option value="South Sinai">South Sinai</option>
             </select>
           </div>
         </div>
