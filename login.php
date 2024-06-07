@@ -31,80 +31,61 @@ if (isset($_POST['login'])) {
   // Check in users table
   $query = "SELECT * FROM users WHERE username = '{$username}'";
   $result = mysqli_query($connection, $query);
-  if (!$result){
-    die("QUERY FAILED" . mysqli_error($connection));
+  if (!$result) {
+      die("QUERY FAILED: " . mysqli_error($connection));
   }
 
   if (mysqli_num_rows($result) > 0) {
-    // User found in users table
-    while($row = mysqli_fetch_assoc($result)){
-        $db_user_id = $row['user_id'];
-        $db_username = $row['username'];
-        $db_user_password = $row['user_password'];
-        $db_user_firstname = $row['user_firstName'];
-        $db_user_lastname = $row['user_lastName'];
-        $db_user_role = $row['user_role'];
-    }
+      // User found in users table
+      $row = mysqli_fetch_assoc($result);
+      $db_user_id = $row['user_ID'];
+      $db_username = $row['username'];
+      $db_user_password = $row['user_password'];
 
-    // Verify the password
-    if (password_verify($password, $db_user_password)) {
-        // Set session variables
-        $_SESSION['user_id'] = $db_user_id;
-        $_SESSION['username'] = $db_username;
-        $_SESSION['user_firstName'] = $db_user_firstname;
-        $_SESSION['user_lastName'] = $db_user_lastname;
-        $_SESSION['user_type'] = $db_user_role; // 'admin' or 'user'
-        $login_success = true;
-        $user_type = $db_user_role;
+      // Verify the password
+      if (password_verify($password, $db_user_password)) {
+          // Set session variables common for all users
+          $_SESSION['user_ID'] = $db_user_id;
+          $_SESSION['username'] = $db_username;
 
-        header("Location: index.php");
-        exit(); // Ensure the script stops executing after redirection
-    } else {
-        $login_success = false;
-    }
-} else {
-    // Check in artisans table
-    $query = "SELECT * FROM artisans WHERE artisan_username = '{$username}'";
-    $result = mysqli_query($connection, $query);
-    if (!$result){
-        die("QUERY FAILED" . mysqli_error($connection));
-    }
+          // Check the operations table for admin or customer service
+          $query = "SELECT * FROM operations WHERE operation_ID = '{$db_user_id}'";
+          $operations_result = mysqli_query($connection, $query);
+          if ($operations_result && mysqli_num_rows($operations_result) > 0) {
+              $operations_row = mysqli_fetch_assoc($operations_result);
+              $db_operations_role = $operations_row['role']; // 'admin', 'customer_service'
+              $_SESSION['operations_role'] = $db_operations_role;
+              $user_type = $db_operations_role; // Set user type based on role
+          }
 
-    if (mysqli_num_rows($result) > 0) {
-        // User found in artisans table
-        while($row = mysqli_fetch_assoc($result)){
-            $db_user_id = $row['artisan_id'];
-            $db_username = $row['artisan_username'];
-            $db_user_brand = $row['artisan_brand'];
-            $db_user_password = $row['artisan_password'];
-            $db_user_role = ($row['is_artist'] == 1) ? 'artist' : 'craftsman';
-        }
+          // Check the artisans table for artist or craftsman
+          $query = "SELECT * FROM artisans WHERE user_id = '{$db_user_id}'";
+          $artisan_result = mysqli_query($connection, $query);
+          if ($artisan_result && mysqli_num_rows($artisan_result) > 0) {
+              $artisan_row = mysqli_fetch_assoc($artisan_result);
+              $is_artist = $artisan_row['is_artist'];
+              $is_craftsmen = $artisan_row['is_craftsmen'];
+              $db_artisan_brand = $artisan_row['brand_name'];
+              $_SESSION['brand_name'] = $db_artisan_brand;
+              $user_type = $is_artist ? 'artist' : ($is_craftsmen ? 'craftsmen' : '');
+          }
 
-        // Verify the password
-        if (password_verify($password, $db_user_password)) {
-            // Set session variables
-            $_SESSION['user_id'] = $db_user_id;
-            $_SESSION['username'] = $db_username;
-            $_SESSION['artisan_brand'] = $db_user_brand;
-            $_SESSION['user_type'] = $db_user_role; // 'artist' or 'craftsman'
-            $login_success = true;
-            $user_type = $db_user_role;
+          $_SESSION['user_type'] = $user_type; // Set user type in session
+          $login_success = true;
 
-            header("Location: index.php");
-            exit(); // Ensure the script stops executing after redirection
-        } else {
-            $login_success = false;
-        }
-    } else {
-        $login_success = false;
-    }
-}
+          // Redirect based on user type
+          header("Location: index.php");
+          exit(); // Ensure the script stops executing after redirection
+      } else {
+          $login_success = false;
+      }
+  } else {
+      $login_success = false;
+  }
 
-if (!$login_success) {
-    
-    $error_message = "Invalid Information";
-    
-}
+  if (!$login_success) {
+      $error_message = "Invalid Information";
+  }
 }
 
 ?>

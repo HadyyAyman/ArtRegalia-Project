@@ -1,14 +1,14 @@
 <?php
 
-function displayUsername() {
+function displayUsernameOrBrand() {
   if (isset($_SESSION['user_type'])) {
-      if ($_SESSION['user_type'] == 'admin' || $_SESSION['user_type'] == 'user') {
+      if ($_SESSION['user_type'] === 'artist' || $_SESSION['user_type'] === 'craftsmen') {
+          return $_SESSION['brand_name'];
+      } else {
           return $_SESSION['username'];
-      } else if ($_SESSION['user_type'] == 'artist' || $_SESSION['user_type'] == 'craftsman') {
-          return $_SESSION['artisan_brand'];
       }
   } else {
-      return "View Profile"; // Default text when no user is logged in
+      return 'View Profile';
   }
 }
 ?>
@@ -40,19 +40,13 @@ function displayUsername() {
 
         <ul class="navbar-list navbar-nav">
 
-        <?php if (isset($_SESSION['user_type']) && in_array($_SESSION['user_type'], ['admin'])): ?>
-          <li class="navbar-item nav-item">
-            <a href="./admin/admin_home.php" class="navbar-links nav-link">Admin</a>
-          </li>
-          <?php endif; ?>
+      
 
           <li class="navbar-item nav-item">
             <a href="index.php" class="navbar-links nav-link">Home</a>
           </li>
 
-          <li class="navbar-item nav-item">
-            <a href="community.php" class="navbar-links nav-link">Community</a>
-          </li>
+
 
           <li class="navbar-item nav-item">
             <a href="Artists-page.php" class="navbar-links desk nav-link">Artists</a>
@@ -74,12 +68,12 @@ function displayUsername() {
             <label for="showMega" class="navbar-links">Craftsmen<i class="fa-solid fa-caret-down"></i></label>
             <div class="mega-box">
               <div class="content">
-              <?php foreach ($categories['craftsman']['main'] as $mainCategory): ?>
+              <?php foreach ($categories['craftsmen']['main'] as $mainCategory): ?>
                 <div class="row">
                 <header><?php echo $mainCategory['category_title']; ?></header>
                   <ul class="mega-links">
-                  <?php if (isset($categories['craftsman']['sub'][$mainCategory['category_id']])): ?>
-                            <?php foreach ($categories['craftsman']['sub'][$mainCategory['category_id']] as $subCategory): ?>
+                  <?php if (isset($categories['craftsmen']['sub'][$mainCategory['category_id']])): ?>
+                            <?php foreach ($categories['craftsmen']['sub'][$mainCategory['category_id']] as $subCategory): ?>
                                 <li><a class="dropdown-item" href="#"><?php echo $subCategory['category_title']; ?></a></li>
                             <?php endforeach; ?>
                         <?php endif; ?>
@@ -99,8 +93,18 @@ function displayUsername() {
           </li>
 
           <li class="navbar-item nav-item">
+            <a href="community.php" class="navbar-links nav-link">Community</a>
+          </li>
+
+          <li class="navbar-item nav-item">
             <a href="about.php" class="navbar-links nav-link">About Us</a>
           </li>
+
+            <?php if (isset($_SESSION['user_type']) && in_array($_SESSION['user_type'], ['admin'])): ?>
+          <li class="navbar-item nav-item">
+            <a href="./admin/admin_home.php" class="navbar-links nav-link">Admin</a>
+          </li>
+          <?php endif; ?>
 
         </ul>
 
@@ -143,7 +147,7 @@ function displayUsername() {
             <label for="showProfile" class="navbar-links"><i class="fa-solid fa-user" aria-hidden="true"></i>Profile <i
                 class="fa-solid fa-caret-down"></i></label>
             <ul class="drop-menu profile">
-              <li><a class="nav-link" href="#"><i class="fa-solid fa-user"></i><?php echo displayUsername();?></a></li>
+              <li><a class="nav-link" href="#"><i class="fa-solid fa-user"></i><?php echo displayUsernameOrBrand();?></a></li>
               <li><a class="nav-link" href="#"><i class="fa-solid fa-heart"></i>Wishlist</a></li>
               <li><a class="nav-link" href="#"><i class="fa-solid fa-circle-question"></i>Help</a></li>
               <li><a class="nav-link" href="#"><i class="fa-solid fa-gears"></i>Settings</a></li>
