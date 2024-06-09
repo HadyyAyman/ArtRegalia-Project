@@ -15,6 +15,7 @@ function renderTable(data, page = 1, entries = 10) {
     const rowClass = item.id % 2 !== 0 ? "odd-row" : "";
     const row = `
             <tr class="${rowClass}">
+                <td><input type="checkbox" class="row-checkbox" data-id="${item.id}"></td>
                 <td>${item.id}</td>
                 <td>${item.name}</td>
                 <td>${item.parentId}</td>
@@ -108,8 +109,11 @@ function searchTable() {
     .value.toLowerCase();
   filtered_data = php_data.filter(
     (item) =>
-      item.name.toLowerCase().includes(searchInput) ||
-      item.type.toLowerCase().includes(searchInput)
+      item.id.toString().toLowerCase().includes(searchInput) || // Category ID
+      item.name.toLowerCase().includes(searchInput) || // Category Name
+      item.parentId?.toString().toLowerCase().includes(searchInput) || // Parent ID
+      item.parentName?.toLowerCase().includes(searchInput) || // Parent Name
+      item.type.toLowerCase().includes(searchInput) // Category Type
   );
   current_page = 1; // Reset to first page
   renderTable(filtered_data, current_page, entries_per_page);
@@ -117,4 +121,83 @@ function searchTable() {
 
 window.onload = () => {
   renderTable(filtered_data, current_page, entries_per_page);
+
+  // Add checkbox handling logic
+  document.addEventListener("change", (event) => {
+    if (event.target.classList.contains("row-checkbox")) {
+      handleSelectedRows();
+    } else if (event.target.id === "select-all-checkbox") {
+      toggleSelectAll(event.target.checked);
+    }
+  });
 };
+
+// Get IDs of selected rows
+function getSelectedRowIds() {
+  const checkboxes = document.querySelectorAll(".row-checkbox");
+  const selectedIds = [];
+  checkboxes.forEach((checkbox) => {
+    if (checkbox.checked) {
+      selectedIds.push(checkbox.getAttribute("data-id"));
+    }
+  });
+  return selectedIds;
+}
+
+// Handle selection of individual row checkboxes
+function handleSelectedRows() {
+  const selectedIds = getSelectedRowIds();
+  console.log("Selected Row IDs:", selectedIds);
+  // Perform actions with selected IDs
+}
+
+// Select or deselect all row checkboxes based on the header checkbox state
+function toggleSelectAll(isChecked) {
+  const checkboxes = document.querySelectorAll(".row-checkbox");
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = isChecked;
+  });
+  handleSelectedRows();
+}
+
+// Delete selected rows from the table
+function deleteSelected() {
+  const selectedIds = getSelectedRowIds();
+  if (selectedIds.length > 0) {
+    // Send the selected IDs to the server to delete them from the database
+    fetch("delete_categories.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ ids: selectedIds }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          // Remove selected rows from php_data and filtered_data
+          for (let i = php_data.length - 1; i >= 0; i--) {
+            if (selectedIds.includes(php_data[i].id.toString())) {
+              php_data.splice(i, 1);
+            }
+          }
+
+          for (let i = filtered_data.length - 1; i >= 0; i--) {
+            if (selectedIds.includes(filtered_data[i].id.toString())) {
+              filtered_data.splice(i, 1);
+            }
+          }
+
+          renderTable(filtered_data, current_page, entries_per_page);
+        } else {
+          alert("Error deleting categories from database: " + data.error);
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("Error deleting categories from database");
+      });
+  } else {
+    alert("No rows selected for deletion.");
+  }
+}
