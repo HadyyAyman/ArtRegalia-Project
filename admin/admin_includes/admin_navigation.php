@@ -134,9 +134,6 @@
               <li>
                 <a href="categories.php">View all Categories</a>
               </li>
-              <li>
-                <a href="categories.php">Add a Category</a>
-              </li>
             </ul>
             <!-- /.nav-second-level -->
           </li>

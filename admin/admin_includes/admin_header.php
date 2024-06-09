@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Startmin - Bootstrap Admin Theme</title>
+  <title>Administration</title>
 
   <link href="./css/custom.css" rel="stylesheet">
   <!-- Bootstrap Core CSS -->
