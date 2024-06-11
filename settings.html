@@ -173,150 +173,38 @@
     </div>
   </header>
 
-  <main class="sp-main">
-
-    <div class="sp-container">
-      <div class="sp-image-carousel">
-        <div class="large-image">
-          <img id="mainImage" src="" alt="Large Image">
+  <main class="settings-main">
+    <h1>Account Settings</h1>
+    <form class="settings-form" action="/submit_account_settings" method="POST">
+        <div class="settings-form-group">
+            <label for="first-name">* First Name</label>
+            <input type="text" id="first-name" name="first-name" required>
         </div>
-        <div class="small-images">
-          <img onclick="changeImage('')" src="" alt="Small Image 1">
-          <img onclick="changeImage('')" src="" alt="Small Image 2">
-          <img onclick="changeImage('')" src="" alt="Small Image 3">
-          <!-- <img onclick="changeImage('/images/profile.jpg')" src="/images/profile.jpg" alt="Small Image 4"> -->
+        <div class="settings-form-group">
+            <label for="last-name">* Last Name</label>
+            <input type="text" id="last-name" name="last-name" required>
         </div>
-      </div>
-      <div class="sp-product-info">
-        <div class="sp-rating-reviews">
-          <span class="sp-rating">★★★★☆</span>
-          <span class="sp-reviews">(123 reviews)</span>
+        <div class="settings-form-group">
+            <label for="email">* Email</label>
+            <input type="email" id="email" name="email" required>
         </div>
-        <h1 class="sp-product-title">Product Title</h1>
-        <p class="sp-seller"><i class="ri-user-6-fill" title="Product Seller"></i><span>Hady Hossam</span></p>
-        <p class="sp-availability">Availability <span>(In Stock)</span></p>
-        <p class="sp-price">£485</p>
-        <p class="delivery-message">Order now and get it delivered within <span id="deliveryDays">2</span> days!</p>
-
-        <div class="color-selection">
-          <span data-color="black"></span>
-          <span data-color="red"></span>
-          <span data-color="grey"></span>
-          <span data-color="simone"></span>
+        <div class="settings-form-group">
+            <label for="phone-number">* Phone Number</label>
+            <input type="tel" id="phone-number" name="phone-number" required>
         </div>
-
-        <div class="quantity-section">
-          <label for="quantity">Qnt:</label>
-          <input type="number" id="quantity" name="quantity" value="1" min="1">
+        <div class="settings-form-group">
+            <label for="password">* Password</label>
+            <input type="password" id="password" name="password" required>
         </div>
-        <button class="add-to-cart"> Add to Cart</button>
-        <button class="add-to-wishlist">❤ Add to wishList</button>
-
-        <div class="sp-tabs">
-          <button class="sp-tablink" onclick="openTab(event, 'Specifications')">Item Specifications</button>
-          <button class="sp-tablink" onclick="openTab(event, 'Dimensions')">Dimensions</button>
-          <button class="sp-tablink" onclick="openTab(event, 'Reviews')">Reviews</button>
-          <div id="Specifications" class="tabcontent">
-            <!-- <h3>Specifications</h3> -->
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt officiis, ea repudiandae impedit
-              expedita aperiam, ipsum, enim dicta nam magni quisquam nihil? Reprehenderit optio quas, itaque perferendis
-              molestias doloribus hic?</p>
-          </div>
-
-          <div id="Dimensions" class="tabcontent">
-            <!-- <h3>Specifications</h3> -->
-            <p>Height: <span>35cm</span></p>
-            <p>Width: <span>35cm</span></p>
-            <p>Material: <span>35cm</span></p>
-          </div>
-
-          <div id="Reviews" class="tabcontent">
-            <div class="sp-review col-md-8">
-              <img src="/images/profile.jpg" alt="user" />
-              <div class="card__content">
-                <span><i class="ri-double-quotes-l"></i></span>
-                <div class="card__details">
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <p>
-                    We had a great time collaborating with this shop. They
-                    have my high recommendation!
-                  </p>
-                  <h4>- Hady Ayman</h4>
-                </div>
-              </div>
-            </div>
-
-            <div class="sp-review col-md-8">
-              <img src="/images/profile.jpg" alt="user" />
-              <div class="card__content">
-                <span><i class="ri-double-quotes-l"></i></span>
-                <div class="card__details">
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <p>
-                    We had a great time collaborating with this shop. They
-                    have my high recommendation!
-                  </p>
-                  <h4>- Hady Ayman</h4>
-                </div>
-              </div>
-            </div>
-
-            <div class="sp-review col-md-8">
-              <img src="/images/profile.jpg" alt="user" />
-              <div class="card__content">
-                <span><i class="ri-double-quotes-l"></i></span>
-                <div class="card__details">
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <p>
-                    We had a great time collaborating with this shop. They
-                    have my high recommendation!
-                  </p>
-                  <h4>- Hady Ayman</h4>
-                </div>
-              </div>
-            </div>
-
-            <div class="sp-review col-md-8">
-              <img src="/images/profile.jpg" alt="user" />
-              <div class="card__content">
-                <span><i class="ri-double-quotes-l"></i></span>
-                <div class="card__details">
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <p>
-                    We had a great time collaborating with this shop. They
-                    have my high recommendation!
-                  </p>
-                  <h4>- Hady Ayman</h4>
-                </div>
-              </div>
-            </div>
-
-
-            <a id="showMoreReviews" class="sp-showMoreReviews" href="javascript:void(0);" onclick="toggleReviews()">Show
-              More</a>
-          </div>
+        <div class="settings-form-group">
+            <label for="confirm-password">* Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
         </div>
-
-      </div>
-    </div>
-
-  </main>
+        <div class="settings-form-group">
+            <button type="submit" class="settings-submit-btn">Save</button>
+        </div>
+    </form>
+</main>
 
   <footer class="footer">
 
@@ -460,9 +348,7 @@
       </div>
     </div>
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="./javascript/sp.js" charset="UTF-8"></script>
-
+  <script src="./javascript/Home.js" charset="UTF-8"></script>
 </body>
 
 </html>
