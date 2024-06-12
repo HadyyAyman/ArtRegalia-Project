@@ -458,6 +458,72 @@ body {
   /* ======================= */
   /* SEARCH STYLES           */
   /* ======================= */
+
+/* Ensure the search container is hidden initially */
+.d-none {
+  display: none;
+}
+
+/* Flexbox container for the search bar */
+#searchContainer {
+  display: none; /* Initially hidden */
+  align-items: center;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+/* Display the search container when the navbar-search-active class is applied */
+.navbar-search-active #searchContainer {
+  display: flex;
+}
+
+/* Style the search input field */
+#searchInput {
+  flex-grow: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+/* Style the close button */
+.nav-close-search {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.fa-xmark{
+  color: var(--color9);
+}
+
+/* Hide the navigation items and action list when the search bar is active */
+.navbar-search-active .navbar-list,
+.navbar-search-active .nav-action-list {
+  display: none;
+}
+
+/* Adjustments for the fixed-top navbar */
+.navbar-search-active .navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+  /* .d-none {
+    display: none;
+  }
+  
+  .navbar-search-active .navbar-list,
+  .navbar-search-active .nav-action-list {
+    display: none;
+  }
+  
+  .navbar-search-active #searchContainer {
+    display: flex;
+  } */
+
   /* #searchOverlay {
     position: fixed;
     top: 0;

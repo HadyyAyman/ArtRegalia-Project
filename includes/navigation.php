@@ -159,6 +159,14 @@ function displayUsernameOrBrand() {
             </ul>
           </li>
         </ul>
+        <div id="searchContainer" class="d-none">
+          <input type="text" id="searchInput" class="form-control" placeholder="Search...">
+          <button class="btn btn-link nav-close-search" id="closeSearchButton">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
       </nav>
     </div>
   </header>
+
+  <script src="./javascript/search.js" charset="UTF-8"></script>
