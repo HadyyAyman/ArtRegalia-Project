@@ -93,7 +93,7 @@ body {
 
 .split.left {
   left: 0;
-  background-image: url('/images/craftart.jpg');
+  /* background-image: url('../images/artist.jpg'); */
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -108,7 +108,7 @@ body {
 
 .split.right {
   right: 0;
-  background-image: url('/images/artist.jpg');
+  /* background-image: url('../images/artist.jpg'); */
   background-repeat: no-repeat;
   background-size: cover;
 }

@@ -29,11 +29,13 @@ $user_phone = $_POST['user_phone'];
 $artist = isset($_POST['artist']) ? 1 : 0;
 $craftsmen = isset($_POST['craftsmen']) ? 1 : 0;
 $brand_name = $_POST['brand_name'];
-$artisan_facebook = $_POST['artisan_facebook'];
-$artisan_instagram = $_POST['artisan_instagram'];
-$artisan_tiktok = $_POST['artisan_tiktok'];
-$artisan_twitter = $_POST['artisan_twitter'];
-$artisan_youtube = $_POST['artisan_youtube'];
+$social_media_links = array(
+  'facebook' => $_POST['artisan_facebook'],
+  'instagram' => $_POST['artisan_instagram'],
+  'tiktok' => $_POST['artisan_tiktok'],
+  'twitter' => $_POST['artisan_twitter'],
+  'youtube' => $_POST['artisan_youtube']
+);
 $country = $_POST['country'];
 $state = $_POST['state'];
 
@@ -48,40 +50,23 @@ if(!empty($brand_name) && !empty($user_firstname) && !empty($username) && !empty
   $user_password = mysqli_real_escape_string($connection, $user_password);
 
   $user_phone = mysqli_real_escape_string($connection, $user_phone);
-  $artisan_facebook = mysqli_real_escape_string($connection, $artisan_facebook);
-  $artisan_instagram = mysqli_real_escape_string($connection, $artisan_instagram);
-  $artisan_tiktok = mysqli_real_escape_string($connection, $artisan_tiktok);
-  $artisan_twitter = mysqli_real_escape_string($connection, $artisan_twitter);
-  $artisan_youtube = mysqli_real_escape_string($connection, $artisan_youtube);
   $user_address = mysqli_real_escape_string($connection, $user_address);
 
 
   //encrypt password
   $user_password = password_hash($user_password, PASSWORD_BCRYPT);
-
+ 
   
-   // insert user data
-   $query = "INSERT INTO users (user_gender, user_email, user_firstname, user_lastname, username, user_password, user_address, user_phone) ";
-   $query .= "VALUES ('{$user_gender}', '{$user_email}', '{$user_firstname}', '{$user_lastname}', '{$username}', '{$user_password}', '{$user_address}' , '{$user_phone}')";
-   $user_registration_query = mysqli_query($connection, $query);
+   // insert sign-up requests data
+   $query = "INSERT INTO sign_up_requests (user_gender, user_email, username, user_phone, user_password, user_firstname, user_lastname, user_address, is_artist, is_craftsmen, brand_name, social_media_links, artisan_country, artisan_state, artisan_status) ";
+   $query .= "VALUES ('{$user_gender}','{$user_email}','{$username}','{$user_phone}','{$user_password}','{$user_firstname}','{$user_lastname}','{$user_address}','{$artist}','{$craftsmen}','{$brand_name}','" . json_encode($social_media_links) . "','{$country}','{$state}', 'pending')";
+   $artisan_sign_up_request_query= mysqli_query($connection, $query);
 
-   if (!$user_registration_query) {
-       die("User Query Failed" . mysqli_error($connection));
-   }
-
-   // get the ID of the inserted user
-   $user_id = mysqli_insert_id($connection);
-
-   // insert artisan data
-   $artisan_query = "INSERT INTO artisans (artisan_ID, is_artist, is_craftsmen, brand_name, artisan_facebook, artisan_instagram, artisan_tiktok, artisan_twitter, artisan_youtube, artisan_country, artisan_state) ";
-   $artisan_query .= "VALUES ({$user_id}, '{$artist}', '{$craftsmen}', '{$brand_name}', '{$artisan_facebook}', '{$artisan_instagram}', '{$artisan_tiktok}', '{$artisan_twitter}', '{$artisan_youtube}', '{$country}', '{$state}') ";
-   $artisan_registration_query = mysqli_query($connection, $artisan_query);
-
-   if (!$artisan_registration_query) {
+   if (!$artisan_sign_up_request_query) {
        die("Artisan Query Failed" . mysqli_error($connection));
    }
 
-   $message = "<script> alert('Registration has been submitted.')</script>";
+   $message = "<script> alert('Thanks for signing-up with ArtRegalia, Your Registration is under confirmation.')</script>";
 
    }else {
      $message = "Fields can not be empty";
