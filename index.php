@@ -14,10 +14,12 @@ session_start();
   <!-- =============================== -->
   <div class="split-landing">
     <div class="split left">
+      <img src="./images/craftart.jpg" alt="">
       <h1 class="craftart">Craftsmen</h1>
       <a href="craft-page.html" class="show-btn">Show</a>
     </div>
     <div class="split right">
+    <img src="./images/artist.jpg" alt="">
       <h1 class="craftart">Artists</h1>
       <a href="Artists-page.html" class="show-btn">Show</a>
     </div>
