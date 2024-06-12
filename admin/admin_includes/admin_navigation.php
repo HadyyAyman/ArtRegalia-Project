@@ -111,6 +111,9 @@
             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Users<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
               <li>
+                <a href="sign_up_requests.php">Sign-up Requests</a>
+              </li>
+              <li>
                 <a href="flot.html">Artisans</a>
               </li>
               <li>
@@ -123,7 +126,7 @@
                 <a href="morris.html">View all users</a>
               </li>
               <li>
-                <a href="morris.html">Add user</a>
+                <a href="add_user.php">Add user</a>
               </li>
             </ul>
             <!-- /.nav-second-level -->
