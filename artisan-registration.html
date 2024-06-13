@@ -6,8 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ArtRegalia</title>
-  <script src="https://kit.fontawesome.com/a014b52ca8.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/akar-icons-fonts"></script>
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
@@ -15,12 +13,16 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="./styles/style.css">
+  <script src="https://kit.fontawesome.com/a014b52ca8.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/akar-icons-fonts"></script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
+
 </head>
 
 <body>
-  <!-- =============================== -->
-  <!-- Navigation bar -->
-  <!-- =============================== -->
+
+
+
   <header class="header" data-header>
     <div class="nav-container">
 
@@ -165,31 +167,106 @@
     </div>
   </header>
 
-  <main class="help-main">
-    <h1>Frequently Asked Questions</h1>
-    <div class="faq-container">
-      <div class="faq">
-        <h3 class="faq-question">What is ArtRegalia?</h3>
-        <div class="faq-answer">
-          <p>ArtRegalia is a platform that sells handmade products, provides mentorship and guidance from artists and
-            designers to handicrafts to produce top-quality products with great design.</p>
+
+
+
+
+
+  <main class="login-page2">
+    <div class="form artisan-form">
+      <form class="artisan-register" method="POST">
+
+        <h2>Register</h2>
+        <div class="checkbox-container">
+
+          <div class="checkbox">
+            <input type="checkbox" id="artist-id" name="artist" value="Artist">
+            <label for="artist-id">Artist</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="Craftsmen-id" name="craftsmen" value="Craftsmen">
+            <label for="Craftsmen-id">Craftsmen</label>
+          </div>
+
         </div>
-      </div>
-      <div class="faq">
-        <h3 class="faq-question">How can I add a product?</h3>
-        <div class="faq-answer">
-          <p>To add a product, go to the "Add New Products" section, fill in the product details, and click the "Save"
-            button.</p>
+
+        <div class="Grid-Container">
+          <select name="gender" id="registration-gender">
+            <option value="0">Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+          <input type="text" placeholder="Brand Name*" name="brand_name" />
+          <input type="text" placeholder="First Name*" name="user_firstname" />
+          <input type="text" placeholder="Last Name*" name="user_lastname" />
+          <input type="text" placeholder="User Name*" name="username" />
+          <input type="email" placeholder="Email*" name="user_email" />
+          <input type="password" placeholder="Password*" name="user_password" />
+          <input type="text" placeholder="Phone*" name="user_phone" />
         </div>
-      </div>
-      <div class="faq">
-        <h3 class="faq-question">How do I manage my orders?</h3>
-        <div class="faq-answer">
-          <p>You can manage your orders from the "Orders" section, where you can view and update the status of your
-            orders.</p>
+
+        <hr style="border-color: #fff;" class="mb-4">
+
+        <h5>Social Media</h5>
+        <div class="Grid-Container">
+          <input type="text" placeholder="Facebook*" name="artisan_facebook" />
+          <input type="text" placeholder="Instagram*" name="artisan_instagram" />
+          <input type="text" placeholder="Tiktok*" name="artisan_tiktok" />
+          <input type="text" placeholder="Twitter*" name="artisan_twitter" />
+          <input type="text" placeholder="Youtube*" name="artisan_youtube" />
         </div>
-      </div>
-      <!-- Add more FAQs as needed -->
+
+        <hr style="border-color: #fff;" class="mb-4">
+        <h5>Address</h5>
+        <div class="Grid-Container">
+          <input type="text" placeholder="Address *" name="user_address" />
+          <div class="select-container col-12">
+            <select name="country" id="country_id" class="col-6">
+              <option value="1">Country</option>
+              <option value="Egypt">Egypt</option>
+            </select>
+
+            <select name="state" id="state_id" class="col-6">
+              <option value="1">State</option>
+              <option value="Cairo">Cairo</option>
+              <option value="Alexandria">Alexandria</option>
+              <option value="Port Said">Port Said</option>
+              <option value="Suez">Suez</option>
+              <option value="Damietta">Damietta</option>
+              <option value="Ismailia">Ismailia</option>
+              <option value="Kafr El Sheikh">Kafr El Sheikh</option>
+              <option value="Al Gharbiyah">Al Gharbiyah</option>
+              <option value=" Al Monufiyah">Al Monufiyah</option>
+              <option value="Al Daqahliyah">Al Daqahliyah</option>
+              <option value="Al Sharqiyah">Al Sharqiyah</option>
+              <option value="Al Qalyubiyah">Al Qalyubiyah</option>
+              <option value="Al Menofiyah">Al Menofiyah</option>
+              <option value="Giza">Giza</option>
+              <option value="Al Fayyum">Al Fayyum</option>
+              <option value="Bani Swaif">Bani Swaif</option>
+              <option value="Minya">Minya</option>
+              <option value="Assiut">Assiut</option>
+              <option value="Sohag">Sohag</option>
+              <option value="Qena">Qena</option>
+              <option value="Luxor">Luxor</option>
+              <option value="Aswan">Aswan</option>
+              <option value="Red Sea">Red Sea</option>
+              <option value="New Valley">New Valley</option>
+              <option value="Mersa Matruh">Mersa Matruh</option>
+              <option value="North Sinai">North Sinai</option>
+              <option value="South Sinai">South Sinai</option>
+            </select>
+          </div>
+        </div>
+
+        <input type="submit" name="artisan_create" value="Create" class="btn artisan-register-btn" style="border:0;">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        </input>
+        <p class="message">Already registered? <a href="login.php">Sign In</a></p>
+      </form>
     </div>
   </main>
 
@@ -217,24 +294,24 @@
               <h4 class="c-nav-tool_title">Menu</h4>
               <ul class="c-nav-tool_list">
                 <li>
-                  <a href="index.html" class="c-link">Home</a>
+                  <a href="index.php" class="c-link">Home</a>
                 </li>
 
                 <li>
-                  <a href="community.html" class="c-link">Community</a>
+                  <a href="community.php" class="c-link">Community</a>
                 </li>
 
                 <li>
-                  <a href="about.html" class="c-link">About Us</a>
+                  <a href="about.php" class="c-link">About Us</a>
                 </li>
                 <li>
-                  <a href="blog.html" class="c-link">Blog</a>
+                  <a href="blog.php" class="c-link">Blog</a>
                 </li>
                 <li>
-                  <a href="shops.html" class="c-link">Shops</a>
+                  <a href="shops.php" class="c-link">Shops</a>
                 </li>
                 <li>
-                  <a href="shopall.html" class="c-link">Shop all</a>
+                  <a href="shopall.php" class="c-link">Shop all</a>
                 </li>
               </ul>
             </nav>
@@ -266,7 +343,7 @@
                 </li>
 
                 <li class="c-nav-tool_item">
-                  <a href="Registration.html" class="c-link">
+                  <a href="Registration.php" class="c-link">
                     Sign Up
                   </a>
                 </li>
@@ -335,8 +412,13 @@
       </div>
     </div>
   </footer>
+
+
+
+
   <script src="./javascript/search.js" charset="UTF-8"></script>
-  <script src="./javascript/help.js" charset="UTF-8"></script>
+  <script src="./javascript/Home.js" charset="UTF-8"></script>
+
 </body>
 
 </html>

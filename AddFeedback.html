@@ -46,24 +46,20 @@
 
         <ul class="navbar-list navbar-nav">
 
+
+
           <li class="navbar-item nav-item">
             <a href="index.html" class="navbar-links nav-link">Home</a>
           </li>
 
-          <li class="navbar-item nav-item">
-            <a href="community.html" class="navbar-links nav-link">Community</a>
-          </li>
+
 
           <li class="navbar-item nav-item">
             <a href="Artists-page.html" class="navbar-links desk nav-link">Artists</a>
             <input type="checkbox" id="showArtists" class="dropdown-toggle">
             <label for="showArtists" class="navbar-links">Artists <i class="fa-solid fa-caret-down"></i></label>
             <ul class="drop-menu">
-              <li><a class="dropdown-item" href="#">Street Art</a></li>
-              <li><a class="dropdown-item" href="#">Digital Art</a></li>
-              <li><a class="dropdown-item" href="#">Portrait Artists</a></li>
-              <li><a class="dropdown-item" href="#">Wood Artists</a></li>
-              <li><a class="dropdown-item" href="#">Muralists</a></li>
+              <li><a class='dropdown-item' href='#'>Street Artist</a></li>
             </ul>
           </li>
 
@@ -73,37 +69,18 @@
             <label for="showMega" class="navbar-links">Craftsmen<i class="fa-solid fa-caret-down"></i></label>
             <div class="mega-box">
               <div class="content">
+
                 <div class="row">
                   <header>Bags</header>
                   <ul class="mega-links">
-                    <li><a class="dropdown-item" href="#">Macramé</a></li>
-                    <li><a class="dropdown-item" href="#">Beaded</a></li>
-                    <li><a class="dropdown-item" href="#">Leather</a></li>
-                    <li><a class="dropdown-item" href="#">Canvas</a></li>
+                    <li><a class="dropdown-item" href="#">beaded</a></li>
+                    <li><a class="dropdown-item" href="#">beaded</a></li>
+                    <li><a class="dropdown-item" href="#">beaded</a></li>
+                    <li><a class="dropdown-item" href="#">beaded</a></li>
+                    <li><a class="dropdown-item" href="#">beaded</a></li>
                   </ul>
                 </div>
-                <div class="row">
-                  <header>Bracelets</header>
-                  <ul class="mega-links">
-                    <li><a class="dropdown-item" href="#">Macramé</a></li>
-                    <li><a class="dropdown-item" href="#">Beaded</a></li>
-                    <li><a class="dropdown-item" href="#">Leather</a></li>
-                    <li><a class="dropdown-item" href="#">Metal</a></li>
-                    <li><a class="dropdown-item" href="#">Charm</a></li>
-                    <li><a class="dropdown-item" href="#">Woven</a></li>
-                  </ul>
-                </div>
-                <div class="row">
-                  <header>Home Decor</header>
-                  <ul class="mega-links">
-                    <li><a class="dropdown-item" href="#">Textiles</a></li>
-                    <li><a class="dropdown-item" href="#">Pottery</a></li>
-                    <li><a class="dropdown-item" href="#">Woodcraft</a></li>
-                    <li><a class="dropdown-item" href="#">Basketry</a></li>
-                    <li><a class="dropdown-item" href="#">Lighting</a></li>
-                    <li><a class="dropdown-item" href="#">Paintings</a></li>
-                  </ul>
-                </div>
+
               </div>
             </div>
           </li>
@@ -117,7 +94,15 @@
           </li>
 
           <li class="navbar-item nav-item">
+            <a href="community.html" class="navbar-links nav-link">Community</a>
+          </li>
+
+          <li class="navbar-item nav-item">
             <a href="about.html" class="navbar-links nav-link">About Us</a>
+          </li>
+
+          <li class="navbar-item nav-item">
+            <a href="./admin/admin_home.html" class="navbar-links nav-link">Admin</a>
           </li>
 
         </ul>
@@ -165,58 +150,68 @@
               <li><a class="nav-link" href="./wishlist.html"><i class="fa-solid fa-heart"></i>Wishlist</a></li>
               <li><a class="nav-link" href="help.html"><i class="fa-solid fa-circle-question"></i>Help</a></li>
               <li><a class="nav-link" href="settings.html"><i class="fa-solid fa-gears"></i>Settings</a></li>
-              <li><a class="nav-link" href="Registration.html"><i class="fa-solid fa-lock"></i>Sign-in/Sign-up</a></li>
+
+              <li><a class="nav-link" href="login.html"><i class="fa-solid fa-lock"></i>Sign-in/Sign-up</a></li>
             </ul>
           </li>
         </ul>
+        <div id="searchContainer" class="d-none">
+          <input type="text" id="searchInput" class="form-control" placeholder="Search...">
+          <button class="btn btn-link nav-close-search" id="closeSearchButton">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
       </nav>
     </div>
   </header>
 
   <main class="feedback-main">
     <div class="feedback-container">
-        <h2>Product Customer Feedback Form</h2>
-        <p>Thank you for taking time to provide feedback. We appreciate hearing from you and will review your comments carefully.</p>
-        <form class="feedback-form" action="submit_feedback.php" method="post">
-          <label class="feedback-label">Would you recommend us to your friends and colleagues?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="recommend" value="Yes"> Yes</label>
-            <label><input type="radio" name="recommend" value="No"> No</label>
-          </div>
+      <h2>Product Customer Feedback Form</h2>
+      <p>Thank you for taking time to provide feedback. We appreciate hearing from you and will review your comments
+        carefully.</p>
+      <form class="feedback-form" action="submit_feedback.php" method="post">
+        <label class="feedback-label">Would you recommend us to your friends and colleagues?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="recommend" value="Yes"> Yes</label>
+          <label><input type="radio" name="recommend" value="No"> No</label>
+        </div>
 
-          <label class="feedback-label">Do you have any suggestions to improve our product and service?</label>
-          <textarea name="suggestions" rows="4"></textarea>
+        <label class="feedback-label">Do you have any suggestions to improve our product and service?</label>
+        <textarea name="suggestions" rows="4"></textarea>
 
-          <label class="feedback-label">How satisfied are you with our company overall?</label>
-          <div class="star-group">
-            <input type="radio" id="star1" name="satisfaction" value="1">
-            <label for="star1"></label>
-            <input type="radio" id="star2" name="satisfaction" value="2">
-            <label for="star2"></label>
-            <input type="radio" id="star3" name="satisfaction" value="3">
-            <label for="star3"></label>
-            <input type="radio" id="star4" name="satisfaction" value="4">
-            <label for="star4"></label>
-            <input type="radio" id="star5" name="satisfaction" value="5">
-            <label for="star5"></label>
-          </div>
+        <label class="feedback-label">How satisfied are you with our company overall?</label>
+        <div class="star-group">
+          <input type="radio" id="star1" name="satisfaction" value="1">
+          <label for="star1"></label>
+          <input type="radio" id="star2" name="satisfaction" value="2">
+          <label for="star2"></label>
+          <input type="radio" id="star3" name="satisfaction" value="3">
+          <label for="star3"></label>
+          <input type="radio" id="star4" name="satisfaction" value="4">
+          <label for="star4"></label>
+          <input type="radio" id="star5" name="satisfaction" value="5">
+          <label for="star5"></label>
+        </div>
 
-          <label class="feedback-label">To the best of your knowledge, is this feedback something that others in your situation would also share?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="shared_feedback" value="Yes"> Yes</label>
-            <label><input type="radio" name="shared_feedback" value="No"> No</label>
-          </div>
+        <label class="feedback-label">To the best of your knowledge, is this feedback something that others in your
+          situation would also share?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="shared_feedback" value="Yes"> Yes</label>
+          <label><input type="radio" name="shared_feedback" value="No"> No</label>
+        </div>
 
-          <label class="feedback-label">Please leave your email address if you would like us to contact you regarding any questions.</label>
-          <div class="name-email">
-            <input type="text" name="first_name" placeholder="First Name">
-            <input type="text" name="last_name" placeholder="Last Name">
-            <input type="email" name="email" placeholder="Email Address">
-          </div>
+        <label class="feedback-label">Please leave your email address if you would like us to contact you regarding any
+          questions.</label>
+        <div class="name-email">
+          <input type="text" name="first_name" placeholder="First Name">
+          <input type="text" name="last_name" placeholder="Last Name">
+          <input type="email" name="email" placeholder="Email Address">
+        </div>
 
-          <button class="feedback-sub-btn" type="submit">Submit</button>
-        </form>
-      </div>
+        <button class="feedback-sub-btn" type="submit">Submit</button>
+      </form>
+    </div>
   </main>
 
   <footer class="footer">
@@ -361,7 +356,7 @@
       </div>
     </div>
   </footer>
-  <script src="./javascript/Home.js" charset="UTF-8"></script>
+  <script src="./javascript/search.js" charset="UTF-8"></script>
 </body>
 
 </html>

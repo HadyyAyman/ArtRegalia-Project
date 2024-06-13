@@ -21,6 +21,8 @@
   <!-- =============================== -->
   <!-- Navigation bar -->
   <!-- =============================== -->
+
+
   <header class="header" data-header>
     <div class="nav-container">
 
@@ -46,24 +48,20 @@
 
         <ul class="navbar-list navbar-nav">
 
+
+
           <li class="navbar-item nav-item">
             <a href="index.html" class="navbar-links nav-link">Home</a>
           </li>
 
-          <li class="navbar-item nav-item">
-            <a href="community.html" class="navbar-links nav-link">Community</a>
-          </li>
+
 
           <li class="navbar-item nav-item">
             <a href="Artists-page.html" class="navbar-links desk nav-link">Artists</a>
             <input type="checkbox" id="showArtists" class="dropdown-toggle">
             <label for="showArtists" class="navbar-links">Artists <i class="fa-solid fa-caret-down"></i></label>
             <ul class="drop-menu">
-              <li><a class="dropdown-item" href="#">Street Art</a></li>
-              <li><a class="dropdown-item" href="#">Digital Art</a></li>
-              <li><a class="dropdown-item" href="#">Portrait Artists</a></li>
-              <li><a class="dropdown-item" href="#">Wood Artists</a></li>
-              <li><a class="dropdown-item" href="#">Muralists</a></li>
+              <li><a class='dropdown-item' href='#'>Street Artist</a></li>
             </ul>
           </li>
 
@@ -73,37 +71,18 @@
             <label for="showMega" class="navbar-links">Craftsmen<i class="fa-solid fa-caret-down"></i></label>
             <div class="mega-box">
               <div class="content">
+
                 <div class="row">
                   <header>Bags</header>
                   <ul class="mega-links">
-                    <li><a class="dropdown-item" href="#">Macramé</a></li>
-                    <li><a class="dropdown-item" href="#">Beaded</a></li>
-                    <li><a class="dropdown-item" href="#">Leather</a></li>
-                    <li><a class="dropdown-item" href="#">Canvas</a></li>
+                    <li><a class="dropdown-item" href="#">beaded</a></li>
+                    <li><a class="dropdown-item" href="#">beaded</a></li>
+                    <li><a class="dropdown-item" href="#">beaded</a></li>
+                    <li><a class="dropdown-item" href="#">beaded</a></li>
+                    <li><a class="dropdown-item" href="#">beaded</a></li>
                   </ul>
                 </div>
-                <div class="row">
-                  <header>Bracelets</header>
-                  <ul class="mega-links">
-                    <li><a class="dropdown-item" href="#">Macramé</a></li>
-                    <li><a class="dropdown-item" href="#">Beaded</a></li>
-                    <li><a class="dropdown-item" href="#">Leather</a></li>
-                    <li><a class="dropdown-item" href="#">Metal</a></li>
-                    <li><a class="dropdown-item" href="#">Charm</a></li>
-                    <li><a class="dropdown-item" href="#">Woven</a></li>
-                  </ul>
-                </div>
-                <div class="row">
-                  <header>Home Decor</header>
-                  <ul class="mega-links">
-                    <li><a class="dropdown-item" href="#">Textiles</a></li>
-                    <li><a class="dropdown-item" href="#">Pottery</a></li>
-                    <li><a class="dropdown-item" href="#">Woodcraft</a></li>
-                    <li><a class="dropdown-item" href="#">Basketry</a></li>
-                    <li><a class="dropdown-item" href="#">Lighting</a></li>
-                    <li><a class="dropdown-item" href="#">Paintings</a></li>
-                  </ul>
-                </div>
+
               </div>
             </div>
           </li>
@@ -117,7 +96,15 @@
           </li>
 
           <li class="navbar-item nav-item">
+            <a href="community.html" class="navbar-links nav-link">Community</a>
+          </li>
+
+          <li class="navbar-item nav-item">
             <a href="about.html" class="navbar-links nav-link">About Us</a>
+          </li>
+
+          <li class="navbar-item nav-item">
+            <a href="./admin/admin_home.html" class="navbar-links nav-link">Admin</a>
           </li>
 
         </ul>
@@ -165,13 +152,22 @@
               <li><a class="nav-link" href="./wishlist.html"><i class="fa-solid fa-heart"></i>Wishlist</a></li>
               <li><a class="nav-link" href="help.html"><i class="fa-solid fa-circle-question"></i>Help</a></li>
               <li><a class="nav-link" href="settings.html"><i class="fa-solid fa-gears"></i>Settings</a></li>
-              <li><a class="nav-link" href="Registration.html"><i class="fa-solid fa-lock"></i>Sign-in/Sign-up</a></li>
+
+              <li><a class="nav-link" href="login.html"><i class="fa-solid fa-lock"></i>Sign-in/Sign-up</a></li>
             </ul>
           </li>
         </ul>
+        <div id="searchContainer" class="d-none">
+          <input type="text" id="searchInput" class="form-control" placeholder="Search...">
+          <button class="btn btn-link nav-close-search" id="closeSearchButton">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
       </nav>
     </div>
   </header>
+
+
 
   <!-- =============================== -->
   <!-- carousel section / website branding  -->
@@ -314,6 +310,11 @@
                 </button>
               </a>
 
+              <button class="seller" title="Hady Hossam">
+                <i class="ri-user-6-fill"></i>
+                <span>Seller</span>
+              </button>
+
               <button class="rate">
                 <i class="fa-solid fa-star"></i>
                 <span>4.8</span>
@@ -324,7 +325,7 @@
                 <span>Wishlist</span>
               </button>
 
-              <button class="colors">
+              <!-- <button class="colors">
                 <i class="fa-solid fa-palette"></i>
                 <span>
                   <a href="" class="color black"></a>
@@ -332,7 +333,7 @@
                   <a href="" class="color red"></a>
                   <a href="" class="color red"></a>
                 </span>
-              </button>
+              </button> -->
             </div>
           </div>
 
@@ -370,6 +371,11 @@
                 </button>
               </a>
 
+              <button class="seller" title="Hady Hossam">
+                <i class="ri-user-6-fill"></i>
+                <span>Seller</span>
+              </button>
+
               <button class="rate">
                 <i class="fa-solid fa-star"></i>
                 <span>4.8</span>
@@ -380,7 +386,7 @@
                 <span>Wishlist</span>
               </button>
 
-              <button class="colors">
+              <!-- <button class="colors">
                 <i class="fa-solid fa-palette"></i>
                 <span>
                   <a href="" class="color black"></a>
@@ -388,7 +394,7 @@
                   <a href="" class="color red"></a>
                   <a href="" class="color red"></a>
                 </span>
-              </button>
+              </button> -->
             </div>
           </div>
 
@@ -422,14 +428,22 @@
             </div>
 
             <div class="product-sidebar">
+
               <button class="buy">
                 <i class="fa-solid fa-shopping-bag"></i>
                 <span>ADD TO BAG</span>
               </button>
 
-              <button class="info">
-                <i class="fa-solid fa-info"></i>
-                <span>MORE INFO</span>
+              <a href="prodcut-details.html">
+                <button class="info">
+                  <i class="fa-solid fa-info"></i>
+                  <span>MORE INFO</span>
+                </button>
+              </a>
+
+              <button class="seller" title="Hady Hossam">
+                <i class="ri-user-6-fill"></i>
+                <span>Seller</span>
               </button>
 
               <button class="rate">
@@ -442,7 +456,7 @@
                 <span>Wishlist</span>
               </button>
 
-              <button class="colors">
+              <!-- <button class="colors">
                 <i class="fa-solid fa-palette"></i>
                 <span>
                   <a href="" class="color black"></a>
@@ -450,11 +464,11 @@
                   <a href="" class="color red"></a>
                   <a href="" class="color red"></a>
                 </span>
-              </button>
+              </button> -->
             </div>
           </div>
 
-          <div class="product ">
+          <div class="product">
             <figure class="">
               <img src="./images/craftart.jpg" alt="T-Shirt Raplh Lauren" class="product-image img-fluid">
             </figure>
@@ -475,14 +489,22 @@
             </div>
 
             <div class="product-sidebar">
+
               <button class="buy">
                 <i class="fa-solid fa-shopping-bag"></i>
                 <span>ADD TO BAG</span>
               </button>
 
-              <button class="info">
-                <i class="fa-solid fa-info"></i>
-                <span>MORE INFO</span>
+              <a href="prodcut-details.html">
+                <button class="info">
+                  <i class="fa-solid fa-info"></i>
+                  <span>MORE INFO</span>
+                </button>
+              </a>
+
+              <button class="seller" title="Hady Hossam">
+                <i class="ri-user-6-fill"></i>
+                <span>Seller</span>
               </button>
 
               <button class="rate">
@@ -495,7 +517,7 @@
                 <span>Wishlist</span>
               </button>
 
-              <button class="colors">
+              <!-- <button class="colors">
                 <i class="fa-solid fa-palette"></i>
                 <span>
                   <a href="" class="color black"></a>
@@ -503,11 +525,11 @@
                   <a href="" class="color red"></a>
                   <a href="" class="color red"></a>
                 </span>
-              </button>
+              </button> -->
             </div>
           </div>
 
-          <div class="product ">
+          <div class="product">
             <figure class="">
               <img src="./images/craftart.jpg" alt="T-Shirt Raplh Lauren" class="product-image img-fluid">
             </figure>
@@ -528,14 +550,22 @@
             </div>
 
             <div class="product-sidebar">
+
               <button class="buy">
                 <i class="fa-solid fa-shopping-bag"></i>
                 <span>ADD TO BAG</span>
               </button>
 
-              <button class="info">
-                <i class="fa-solid fa-info"></i>
-                <span>MORE INFO</span>
+              <a href="prodcut-details.html">
+                <button class="info">
+                  <i class="fa-solid fa-info"></i>
+                  <span>MORE INFO</span>
+                </button>
+              </a>
+
+              <button class="seller" title="Hady Hossam">
+                <i class="ri-user-6-fill"></i>
+                <span>Seller</span>
               </button>
 
               <button class="rate">
@@ -548,7 +578,7 @@
                 <span>Wishlist</span>
               </button>
 
-              <button class="colors">
+              <!-- <button class="colors">
                 <i class="fa-solid fa-palette"></i>
                 <span>
                   <a href="" class="color black"></a>
@@ -556,7 +586,7 @@
                   <a href="" class="color red"></a>
                   <a href="" class="color red"></a>
                 </span>
-              </button>
+              </button> -->
             </div>
           </div>
         </div>
@@ -714,13 +744,13 @@
 
           <div class="product">
 
-            <div id="productCarousel2" class="carousel slide" data-bs-ride="carousel">
+            <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-indicators">
-                <button type="button" data-bs-target="#productCarousel2" data-bs-slide-to="0" class="active"
+                <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active"
                   aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#productCarousel2" data-bs-slide-to="1"
+                <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1"
                   aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#productCarousel2" data-bs-slide-to="2"
+                <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="2"
                   aria-label="Slide 3"></button>
               </div>
 
@@ -737,12 +767,12 @@
                 </div>
               </div>
 
-              <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel2"
+              <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
               </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#productCarousel2"
+              <button class="carousel-control-next" type="button" data-bs-target="#productCarousel"
                 data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
@@ -765,14 +795,22 @@
             </div>
 
             <div class="product-sidebar">
-              <button class="buy">
-                <i class="fa-solid fa-shopping-bag"></i>
-                <span>REQUEST</span>
-              </button>
 
-              <button class="info">
+              <a href="A-productDetails.html">
+                <button class="buy">
+                  <i class="fa-solid fa-shopping-bag"></i>
+                  <span>START ORDER</span>
+                </button>
+              </a>
+
+              <!-- <button class="info">
                 <i class="fa-solid fa-info"></i>
                 <span>MORE INFO</span>
+              </button> -->
+
+              <button class="seller" title="Hady Hossam">
+                <i class="ri-user-6-fill"></i>
+                <span>Seller</span>
               </button>
 
               <button class="rate">
@@ -799,13 +837,13 @@
 
           <div class="product">
 
-            <div id="productCarousel3" class="carousel slide" data-bs-ride="carousel">
+            <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-indicators">
-                <button type="button" data-bs-target="#productCarousel3" data-bs-slide-to="0" class="active"
+                <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active"
                   aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#productCarousel3" data-bs-slide-to="1"
+                <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1"
                   aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#productCarousel3" data-bs-slide-to="2"
+                <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="2"
                   aria-label="Slide 3"></button>
               </div>
 
@@ -822,12 +860,12 @@
                 </div>
               </div>
 
-              <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel3"
+              <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
               </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#productCarousel3"
+              <button class="carousel-control-next" type="button" data-bs-target="#productCarousel"
                 data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
@@ -850,14 +888,22 @@
             </div>
 
             <div class="product-sidebar">
-              <button class="buy">
-                <i class="fa-solid fa-shopping-bag"></i>
-                <span>REQUEST</span>
-              </button>
 
-              <button class="info">
+              <a href="A-productDetails.html">
+                <button class="buy">
+                  <i class="fa-solid fa-shopping-bag"></i>
+                  <span>START ORDER</span>
+                </button>
+              </a>
+
+              <!-- <button class="info">
                 <i class="fa-solid fa-info"></i>
                 <span>MORE INFO</span>
+              </button> -->
+
+              <button class="seller" title="Hady Hossam">
+                <i class="ri-user-6-fill"></i>
+                <span>Seller</span>
               </button>
 
               <button class="rate">
@@ -1037,6 +1083,7 @@
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./javascript/Shopall.js" charset="UTF-8"></script>
+  <script src="./javascript/search.js" charset="UTF-8"></script>
 </body>
 
 </html>

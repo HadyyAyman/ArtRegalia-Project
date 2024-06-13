@@ -46,24 +46,20 @@
 
         <ul class="navbar-list navbar-nav">
 
+
+
           <li class="navbar-item nav-item">
             <a href="index.html" class="navbar-links nav-link">Home</a>
           </li>
 
-          <li class="navbar-item nav-item">
-            <a href="community.html" class="navbar-links nav-link">Community</a>
-          </li>
+
 
           <li class="navbar-item nav-item">
             <a href="Artists-page.html" class="navbar-links desk nav-link">Artists</a>
             <input type="checkbox" id="showArtists" class="dropdown-toggle">
             <label for="showArtists" class="navbar-links">Artists <i class="fa-solid fa-caret-down"></i></label>
             <ul class="drop-menu">
-              <li><a class="dropdown-item" href="#">Street Art</a></li>
-              <li><a class="dropdown-item" href="#">Digital Art</a></li>
-              <li><a class="dropdown-item" href="#">Portrait Artists</a></li>
-              <li><a class="dropdown-item" href="#">Wood Artists</a></li>
-              <li><a class="dropdown-item" href="#">Muralists</a></li>
+              <li><a class='dropdown-item' href='#'>Street Artist</a></li>
             </ul>
           </li>
 
@@ -73,37 +69,18 @@
             <label for="showMega" class="navbar-links">Craftsmen<i class="fa-solid fa-caret-down"></i></label>
             <div class="mega-box">
               <div class="content">
+
                 <div class="row">
                   <header>Bags</header>
                   <ul class="mega-links">
-                    <li><a class="dropdown-item" href="#">Macramé</a></li>
-                    <li><a class="dropdown-item" href="#">Beaded</a></li>
-                    <li><a class="dropdown-item" href="#">Leather</a></li>
-                    <li><a class="dropdown-item" href="#">Canvas</a></li>
+                    <li><a class="dropdown-item" href="#">beaded</a></li>
+                    <li><a class="dropdown-item" href="#">beaded</a></li>
+                    <li><a class="dropdown-item" href="#">beaded</a></li>
+                    <li><a class="dropdown-item" href="#">beaded</a></li>
+                    <li><a class="dropdown-item" href="#">beaded</a></li>
                   </ul>
                 </div>
-                <div class="row">
-                  <header>Bracelets</header>
-                  <ul class="mega-links">
-                    <li><a class="dropdown-item" href="#">Macramé</a></li>
-                    <li><a class="dropdown-item" href="#">Beaded</a></li>
-                    <li><a class="dropdown-item" href="#">Leather</a></li>
-                    <li><a class="dropdown-item" href="#">Metal</a></li>
-                    <li><a class="dropdown-item" href="#">Charm</a></li>
-                    <li><a class="dropdown-item" href="#">Woven</a></li>
-                  </ul>
-                </div>
-                <div class="row">
-                  <header>Home Decor</header>
-                  <ul class="mega-links">
-                    <li><a class="dropdown-item" href="#">Textiles</a></li>
-                    <li><a class="dropdown-item" href="#">Pottery</a></li>
-                    <li><a class="dropdown-item" href="#">Woodcraft</a></li>
-                    <li><a class="dropdown-item" href="#">Basketry</a></li>
-                    <li><a class="dropdown-item" href="#">Lighting</a></li>
-                    <li><a class="dropdown-item" href="#">Paintings</a></li>
-                  </ul>
-                </div>
+
               </div>
             </div>
           </li>
@@ -117,7 +94,15 @@
           </li>
 
           <li class="navbar-item nav-item">
+            <a href="community.html" class="navbar-links nav-link">Community</a>
+          </li>
+
+          <li class="navbar-item nav-item">
             <a href="about.html" class="navbar-links nav-link">About Us</a>
+          </li>
+
+          <li class="navbar-item nav-item">
+            <a href="./admin/admin_home.html" class="navbar-links nav-link">Admin</a>
           </li>
 
         </ul>
@@ -165,10 +150,17 @@
               <li><a class="nav-link" href="./wishlist.html"><i class="fa-solid fa-heart"></i>Wishlist</a></li>
               <li><a class="nav-link" href="help.html"><i class="fa-solid fa-circle-question"></i>Help</a></li>
               <li><a class="nav-link" href="settings.html"><i class="fa-solid fa-gears"></i>Settings</a></li>
-              <li><a class="nav-link" href="Registration.html"><i class="fa-solid fa-lock"></i>Sign-in/Sign-up</a></li>
+
+              <li><a class="nav-link" href="login.html"><i class="fa-solid fa-lock"></i>Sign-in/Sign-up</a></li>
             </ul>
           </li>
         </ul>
+        <div id="searchContainer" class="d-none">
+          <input type="text" id="searchInput" class="form-control" placeholder="Search...">
+          <button class="btn btn-link nav-close-search" id="closeSearchButton">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
       </nav>
     </div>
   </header>
@@ -361,49 +353,8 @@
 
       </div>
     </div>
-<<<<<<< HEAD
-||||||| 91953a3
-    </div>
 
-=======
 
->>>>>>> 9d98bbdca73c089e9472d76a9f458d669d665b69
-    <!-- <div class="modal fade" id="customOrderModal" tabindex="-1" aria-labelledby="customOrderModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="customOrderModalLabel">Custom Order Request</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body"> -->
-    <!-- Form for custom order request -->
-    <!-- <form class="custom-form">
-              <div class="mb-3">
-                <label for="customImage" class="form-label">Upload Image</label>
-                <input type="file" class="form-control" id="customImage">
-              </div>
-              <div class="mb-3">
-                <label for="material" class="form-label">Specify Your Material</label>
-                <input type="text" class="form-control" id="material">
-              </div>
-              <div class="mb-3">
-                <label for="size" class="form-label">Size</label>
-                <input type="text" class="form-control" id="size">
-              </div>
-              <div class="mb-3">
-                <label for="color" class="form-label">Color</label>
-                <input type="color" class="form-control" id="color">
-              </div>
-              <div class="mb-3">
-                <label for="theme" class="form-label">Theme</label>
-                <input type="text" class="form-control" id="theme">
-              </div>
-              <button type="submit" class="btn btn-primary">Submit Request</button>
-            </form>
-          </div>
-        </div>
-      </div> -->
   </main>
 
   <footer class="footer">
@@ -550,6 +501,7 @@
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./javascript/craft.js" charset="UTF-8"></script>
+  <script src="./javascript/search.js" charset="UTF-8"></script>
 
 </body>
 

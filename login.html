@@ -6,8 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ArtRegalia</title>
-  <script src="https://kit.fontawesome.com/a014b52ca8.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/akar-icons-fonts"></script>
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
@@ -15,12 +13,16 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="./styles/style.css">
+  <script src="https://kit.fontawesome.com/a014b52ca8.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/akar-icons-fonts"></script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
+
 </head>
 
 <body>
-  <!-- =============================== -->
-  <!-- Navigation bar -->
-  <!-- =============================== -->
+
+
+
   <header class="header" data-header>
     <div class="nav-container">
 
@@ -59,7 +61,7 @@
             <input type="checkbox" id="showArtists" class="dropdown-toggle">
             <label for="showArtists" class="navbar-links">Artists <i class="fa-solid fa-caret-down"></i></label>
             <ul class="drop-menu">
-              <li><a class='dropdown-item' href='#'>Street Artist</a></li>
+              <li><a class='dropdown-item' href='#'>Street Artist</a></li>";
             </ul>
           </li>
 
@@ -165,31 +167,24 @@
     </div>
   </header>
 
-  <main class="help-main">
-    <h1>Frequently Asked Questions</h1>
-    <div class="faq-container">
-      <div class="faq">
-        <h3 class="faq-question">What is ArtRegalia?</h3>
-        <div class="faq-answer">
-          <p>ArtRegalia is a platform that sells handmade products, provides mentorship and guidance from artists and
-            designers to handicrafts to produce top-quality products with great design.</p>
-        </div>
-      </div>
-      <div class="faq">
-        <h3 class="faq-question">How can I add a product?</h3>
-        <div class="faq-answer">
-          <p>To add a product, go to the "Add New Products" section, fill in the product details, and click the "Save"
-            button.</p>
-        </div>
-      </div>
-      <div class="faq">
-        <h3 class="faq-question">How do I manage my orders?</h3>
-        <div class="faq-answer">
-          <p>You can manage your orders from the "Orders" section, where you can view and update the status of your
-            orders.</p>
-        </div>
-      </div>
-      <!-- Add more FAQs as needed -->
+
+
+
+  <main class="login-page">
+    <div class="form">
+      <form class="login-form" method="POST">
+        <h2 style="color:var(--color2);"> Login</h2>
+
+        <input type="text" placeholder="Username" name="username" required />
+        <input type="password" placeholder="Password" name="password" required />
+        <input class="btn" type="submit" value="Sign-in" name="login" style="border:0;">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        </input>
+        <p class="message">Not registered? <a href="Registration.html">Create an account</a></p>
+      </form>
     </div>
   </main>
 
@@ -335,8 +330,11 @@
       </div>
     </div>
   </footer>
+
+
+  <script src="./javascript/Home.js" charset="UTF-8"></script>
   <script src="./javascript/search.js" charset="UTF-8"></script>
-  <script src="./javascript/help.js" charset="UTF-8"></script>
+
 </body>
 
 </html>

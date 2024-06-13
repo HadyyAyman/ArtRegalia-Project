@@ -46,24 +46,20 @@
 
         <ul class="navbar-list navbar-nav">
 
+
+
           <li class="navbar-item nav-item">
             <a href="index.html" class="navbar-links nav-link">Home</a>
           </li>
 
-          <li class="navbar-item nav-item">
-            <a href="community.html" class="navbar-links nav-link">Community</a>
-          </li>
+
 
           <li class="navbar-item nav-item">
             <a href="Artists-page.html" class="navbar-links desk nav-link">Artists</a>
             <input type="checkbox" id="showArtists" class="dropdown-toggle">
             <label for="showArtists" class="navbar-links">Artists <i class="fa-solid fa-caret-down"></i></label>
             <ul class="drop-menu">
-              <li><a class="dropdown-item" href="#">Street Art</a></li>
-              <li><a class="dropdown-item" href="#">Digital Art</a></li>
-              <li><a class="dropdown-item" href="#">Portrait Artists</a></li>
-              <li><a class="dropdown-item" href="#">Wood Artists</a></li>
-              <li><a class="dropdown-item" href="#">Muralists</a></li>
+              <li><a class='dropdown-item' href='#'>Street Artist</a></li>
             </ul>
           </li>
 
@@ -73,37 +69,18 @@
             <label for="showMega" class="navbar-links">Craftsmen<i class="fa-solid fa-caret-down"></i></label>
             <div class="mega-box">
               <div class="content">
+
                 <div class="row">
                   <header>Bags</header>
                   <ul class="mega-links">
-                    <li><a class="dropdown-item" href="#">Macramé</a></li>
-                    <li><a class="dropdown-item" href="#">Beaded</a></li>
-                    <li><a class="dropdown-item" href="#">Leather</a></li>
-                    <li><a class="dropdown-item" href="#">Canvas</a></li>
+                    <li><a class="dropdown-item" href="#">beaded</a></li>
+                    <li><a class="dropdown-item" href="#">beaded</a></li>
+                    <li><a class="dropdown-item" href="#">beaded</a></li>
+                    <li><a class="dropdown-item" href="#">beaded</a></li>
+                    <li><a class="dropdown-item" href="#">beaded</a></li>
                   </ul>
                 </div>
-                <div class="row">
-                  <header>Bracelets</header>
-                  <ul class="mega-links">
-                    <li><a class="dropdown-item" href="#">Macramé</a></li>
-                    <li><a class="dropdown-item" href="#">Beaded</a></li>
-                    <li><a class="dropdown-item" href="#">Leather</a></li>
-                    <li><a class="dropdown-item" href="#">Metal</a></li>
-                    <li><a class="dropdown-item" href="#">Charm</a></li>
-                    <li><a class="dropdown-item" href="#">Woven</a></li>
-                  </ul>
-                </div>
-                <div class="row">
-                  <header>Home Decor</header>
-                  <ul class="mega-links">
-                    <li><a class="dropdown-item" href="#">Textiles</a></li>
-                    <li><a class="dropdown-item" href="#">Pottery</a></li>
-                    <li><a class="dropdown-item" href="#">Woodcraft</a></li>
-                    <li><a class="dropdown-item" href="#">Basketry</a></li>
-                    <li><a class="dropdown-item" href="#">Lighting</a></li>
-                    <li><a class="dropdown-item" href="#">Paintings</a></li>
-                  </ul>
-                </div>
+
               </div>
             </div>
           </li>
@@ -117,7 +94,15 @@
           </li>
 
           <li class="navbar-item nav-item">
+            <a href="community.html" class="navbar-links nav-link">Community</a>
+          </li>
+
+          <li class="navbar-item nav-item">
             <a href="about.html" class="navbar-links nav-link">About Us</a>
+          </li>
+
+          <li class="navbar-item nav-item">
+            <a href="./admin/admin_home.html" class="navbar-links nav-link">Admin</a>
           </li>
 
         </ul>
@@ -165,10 +150,17 @@
               <li><a class="nav-link" href="./wishlist.html"><i class="fa-solid fa-heart"></i>Wishlist</a></li>
               <li><a class="nav-link" href="help.html"><i class="fa-solid fa-circle-question"></i>Help</a></li>
               <li><a class="nav-link" href="settings.html"><i class="fa-solid fa-gears"></i>Settings</a></li>
-              <li><a class="nav-link" href="Registration.html"><i class="fa-solid fa-lock"></i>Sign-in/Sign-up</a></li>
+
+              <li><a class="nav-link" href="login.html"><i class="fa-solid fa-lock"></i>Sign-in/Sign-up</a></li>
             </ul>
           </li>
         </ul>
+        <div id="searchContainer" class="d-none">
+          <input type="text" id="searchInput" class="form-control" placeholder="Search...">
+          <button class="btn btn-link nav-close-search" id="closeSearchButton">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
       </nav>
     </div>
   </header>
@@ -346,6 +338,7 @@
   </footer>
   <script src="./javascript/Home.js" charset="UTF-8"></script>
   <script src="./javascript/orders.js" charset="UTF-8"></script>
+  <script src="./javascript/search.js" charset="UTF-8"></script>
   <!-- <script src="./javascript/cart.js" charset="UTF-8"></script> -->
 </body>
 
