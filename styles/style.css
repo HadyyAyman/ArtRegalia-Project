@@ -2469,60 +2469,53 @@ body {
   }
 
   .default-address-check {
-    margin-top: 20px;
-  }
-
-  .checkbox label {
-    color: var(--color9);
-  }
-
-  .checkbox label:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 18px;
-    height: 18px;
-    border: 2px solid var(--color9);
-    border-radius: 3px;
-    background-color: transparent;
-  }
-
-  /* .address-form div {
     display: flex;
-    flex-wrap: wrap;
-    padding-top: 7px;
-    padding-left: 10px;
-    /* margin-bottom: 20px; Increase margin for spacing between sections */
+    margin-top: 20px;
+    gap: 5px;
+  }
 
-
-  /* .address-form div>div {
-  margin-right: 20px;
-  align-items: baseline;
-  margin-bottom: 8px;
-}  */
-
-  /* .address-form label {
-  margin-bottom: 5px;
-  margin-left: 10px;
-  font-weight: bolder;
-  color: var(--color7);
+/* Hide the default checkbox */
+.custom-checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
 
-
-.address-form div>div label {
-  margin-bottom: auto;
+/* Create a custom checkbox */
+.custom-checkbox .checkmark {
+  position: relative;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-color: transparent;
+  border: 2px solid var(--color9);
+  border-radius: 3px;
 }
 
-.address-form div>div>div {
-  display: flex;
-  flex-direction: column;
+/* Style the checkmark/indicator (hidden by default) */
+.custom-checkbox .checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
 }
 
-.address-form div>div>div span {
-  margin-top: 17px;
-} */
+/* Show the checkmark when checked */
+.custom-checkbox input[type="checkbox"]:checked ~ .checkmark::after {
+  display: block;
+}
 
+/* Style the checkmark/indicator */
+.custom-checkbox .checkmark::after {
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--color9);
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
 
   .address-form input[type="text"],
   .address-form input[type="tel"] {
