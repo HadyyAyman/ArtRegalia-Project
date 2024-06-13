@@ -4346,7 +4346,6 @@ body {
   /* =================================== */
 
   .settings-main {
-    flex-grow: 1;
     padding-top: 100px;
     text-align: center;
     background-color: #fff;
@@ -4356,6 +4355,7 @@ body {
   .settings-form {
     display: flex;
     flex-direction: column;
+    border-bottom: none;
   }
 
   .settings-main h1 {
@@ -4403,7 +4403,7 @@ body {
 
 
   /* =================================== */
-  /* MOBILE STYLING  */
+  /* HELP STYLING  */
   /* =================================== */
 
   .help-main {
@@ -4450,6 +4450,74 @@ body {
 
   .faq-answer.active {
     display: block;
+  }
+
+  
+  /* =================================== */
+  /*  CREDIT CARD STYLING  */
+  /* =================================== */
+
+  .credit-card-main {
+    display: flex;
+    justify-content: center;
+    min-height: 500px;
+    padding-top: 125px;
+    background-color: var(--color1);
+  }
+
+  .credit-card-container {
+    flex-grow: 1;
+    width: 80%;
+    max-width: 500px;
+    padding: 20px;
+    background-color: var(--color2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .credit-card-main h2 {
+    margin-bottom: 20px;
+    color: var(--color8);
+    text-align: center;
+  }
+
+  #credit-card-paymentForm{
+    display: flex;
+    flex-direction: column;
+    border-bottom: none;
+  }
+  
+  .credit-card-form-group {
+    margin-bottom: 15px;
+  }
+  
+  .credit-card-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--color6);
+  }
+  
+  .credit-card-form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+    .credit-card-btn {
+    width: 45%;
+    padding: 10px;
+    background-color: var(--color7);
+    border: none;
+    border-radius: 4px;
+    color: var(--color4);
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .credit-card-btn:hover {
+    color: var(--color4);
+    background-color: var(--color9);
+    box-shadow: 0 0 5px var(--color9);
   }
 
 }
