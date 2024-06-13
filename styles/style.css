@@ -2593,7 +2593,7 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: baseline;
-    min-height: 300px;
+    /* min-height: 300px; */
     min-width: 400px;
     padding-top: 10px;
     border-bottom: none;
