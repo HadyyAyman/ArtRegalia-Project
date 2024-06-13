@@ -14,73 +14,72 @@ session_start();
 <?php
 
 
-if(isset($_POST['add_user'])){
+if (isset($_POST['add_user'])) {
+    $user_gender = $_POST['gender'];
+    $user_email = $_POST['user_email'];
+    $user_firstname = $_POST['user_firstname'];
+    $user_lastname = $_POST['user_lastname'];
+    $username = $_POST['username'];
+    $user_password = $_POST['user_password'];
+    $user_phone = $_POST['user_phone'];
+    $user_address = $_POST['user_address'];
+    $authority = $_POST['authority'];
+    $hour_rate = $_POST['hour_rate'];
+    $user_role = $_POST['user_role'];
 
-$user_gender = $_POST['gender'];
-$user_email = $_POST['user_email'];
-$user_firstname = $_POST['user_firstname'];
-$user_lastname = $_POST['user_lastname'];
-$username = $_POST['username'];
-$user_password = $_POST['user_password'];
-$user_phone = $_POST['user_phone'];
-
-$user_image = $_FILES['user_image'];
-$uploadDir = './images/';
-$uploadFile = $uploadDir . basename($_FILES['user_image']['name']);
-if (move_uploaded_file($_FILES['profilePicture']['tmp_name'], $uploadFile)) {
-  echo "File is valid and was successfully uploaded.\n";
-} else {
-  echo "File upload failed.\n";
-}
-
-$user_address = $_POST['user_address'];
-$authority = $_POST['authority'];
-$hour_rate = $_POST['hour_rate'];
-$user_role = $_POST['user_role'];
-
-// 
-$user_firstname = mysqli_real_escape_String($connection, $user_firstname);
-$username = mysqli_real_escape_String($connection, $username);
-$user_email = mysqli_real_escape_String($connection, $user_email);
-$user_password = mysqli_real_escape_String($connection, $user_password);
-$user_gender = mysqli_real_escape_String($connection, $user_gender);
-$user_address = mysqli_real_escape_String($connection, $user_address);
-$authority = mysqli_real_escape_String($connection, $authority);
-$hour_rate = mysqli_real_escape_String($connection, $hour_rate);
-$user_role = mysqli_real_escape_String($connection, $user_role);
-
-
-//encrypt password
-$user_password = password_hash($user_password, PASSWORD_BCRYPT);
-
-// insert into users
-$query = "INSERT INTO users (user_gender, user_email, username, user_firstname, user_lastname, user_image, user_password, user_address, user_phone) ";
-$query .= "VALUES ('{$user_gender}','{$user_email}','{$username}','{$user_firstname}','{$user_lastname}','{$user_image}','{$user_password}','{$user_address}','{$user_phone}')";
-
-$add_user_query = mysqli_query($connection, $query);
-      if(!$add_user_query){die("Query Failed" . mysqli_error($connection));}
-
-
-      else {
-      
-      //get the last inserted user ID
-      $user_id = mysqli_insert_id($connection);
-
-      //insert user ID into operations table as operation_ID
-      $query = "INSERT INTO operations (operation_ID, authority, hour_rate, user_role) VALUES('{$user_id}','{$authority}','{$hour_rate}','{$user_role}')";
-      $operation_query = mysqli_query($connection, $query);
-
-        if (!$operation_query) {
-          die("Query Failed: " . mysqli_error($connection));
-      } else {
-
-        echo "<script>alert('User has been added')</script>";
-      }
+    // File upload handling
+    if (isset($_FILES['user_image']) && $_FILES['user_image']['error'] == UPLOAD_ERR_OK) {
+        $uploadDir = '../images/'; // Directory where you want to save the uploaded files
+        $uploadFile = $uploadDir . basename($_FILES['user_image']['name']);
+        if (move_uploaded_file($_FILES['user_image']['tmp_name'], $uploadFile)) {
+            $user_image = basename($_FILES['user_image']['name']);
+        } else {
+            echo "File upload failed.\n";
+            $user_image = null;
+        }
+    } else {
+        echo "No file was uploaded or there was an upload error.\n";
+        $user_image = null;
     }
-  } 
- else{
-  $message = "";
+
+    // Sanitize inputs
+    $user_firstname = mysqli_real_escape_string($connection, $user_firstname);
+    $username = mysqli_real_escape_string($connection, $username);
+    $user_email = mysqli_real_escape_string($connection, $user_email);
+    $user_password = mysqli_real_escape_string($connection, $user_password);
+    $user_gender = mysqli_real_escape_string($connection, $user_gender);
+    $user_address = mysqli_real_escape_string($connection, $user_address);
+    $authority = mysqli_real_escape_string($connection, $authority);
+    $hour_rate = mysqli_real_escape_string($connection, $hour_rate);
+    $user_role = mysqli_real_escape_string($connection, $user_role);
+
+    // Encrypt password
+    $user_password = password_hash($user_password, PASSWORD_BCRYPT);
+
+    // Insert into users table
+    $query = "INSERT INTO users (user_gender, user_email, username, user_firstname, user_lastname, user_image, user_password, user_address, user_phone) ";
+    $query .= "VALUES ('{$user_gender}', '{$user_email}', '{$username}', '{$user_firstname}', '{$user_lastname}', '{$user_image}', '{$user_password}', '{$user_address}', '{$user_phone}')";
+
+    $add_user_query = mysqli_query($connection, $query);
+    if (!$add_user_query) {
+        die("Query Failed: " . mysqli_error($connection));
+    } else {
+        // Get the last inserted user ID
+        $user_id = mysqli_insert_id($connection);
+
+        // Insert user ID into operations table as operation_ID
+        $query = "INSERT INTO operations (operations_ID, authority, hour_rate, operation_role) VALUES ('{$user_id}', '{$authority}', '{$hour_rate}', '{$user_role}')";
+        $operation_query = mysqli_query($connection, $query);
+        if (!$operation_query) {
+            die("Query Failed: " . mysqli_error($connection));
+        } else {
+            echo "<script>alert('User has been added')</script>";
+        }
+    }
+} else {
+    $message = "";
 }
+
 
 
 ?>
@@ -94,7 +93,7 @@ $add_user_query = mysqli_query($connection, $query);
         </div>
       </div>
 
-      <form class="admin_table form-section" method="POST" action="add_user.php">
+      <form class="admin_table form-section" method="POST" action="add_user.php" enctype="multipart/form-data">
         <div class="controls add_user_form">
 
 
@@ -176,9 +175,9 @@ $add_user_query = mysqli_query($connection, $query);
                 <label for="role">Role</label>
                 <select class="user_inputs" id="role" name="user_role" required>
                   <option value="">Role</option>
-                  <option value="full-access">Admin</option>
-                  <option value="crud">Customer Service</option>
-                  <option value="crud">Contact</option>
+                  <option value="Admin">Admin</option>
+                  <option value="Customer Service">Customer Service</option>
+                  <option value="Contact">Contact</option>
                   <!-- Add more options as needed -->
                 </select>
               </div>

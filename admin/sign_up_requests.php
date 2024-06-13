@@ -53,7 +53,7 @@ session_start();
                 OR user_firstname LIKE '%$search_input%'
                 OR user_lastname LIKE '%$search_input%'
                 OR user_address LIKE '%$search_input%'
-                OR breif LIKE '%$search_input%'
+                OR brief LIKE '%$search_input%'
                 OR is_artist LIKE '%$search_input%'
                 OR is_craftsmen LIKE '%$search_input%'
                 OR brand_name LIKE '%$search_input%'
@@ -70,14 +70,63 @@ session_start();
     $query .= " ORDER BY $sort_column $sort_order
                 LIMIT $entries_per_page OFFSET $offset";
 
-    $display_requests_to_table_query = mysqli_query($connection, $query);
 
-    // Get total number of records for pagination
-    $total_query = "SELECT COUNT(*) as total FROM sign_up_requests";
-    $total_result = mysqli_query($connection, $total_query);
-    $total_row = mysqli_fetch_assoc($total_result);
-    $total_records = $total_row['total'];
-    $total_pages = ceil($total_records / $entries_per_page);
+    // Refetch data after processing and deletion
+$display_requests_to_table_query = mysqli_query($connection, $query);
+
+// Get total number of records for pagination
+$total_query = "SELECT COUNT(*) as total FROM sign_up_requests";
+$total_result = mysqli_query($connection, $total_query);
+$total_row = mysqli_fetch_assoc($total_result);
+$total_records = $total_row['total'];
+$total_pages = ceil($total_records / $entries_per_page);
+
+    // Fetch sign-up requests to process
+$result = mysqli_query($connection, $query);
+
+
+
+while ($row = mysqli_fetch_assoc($result)) {
+    if ($row['artisan_status'] == 'approved') {
+        // Prepare data for users table
+        $user_gender = mysqli_real_escape_string($connection, $row['user_gender']);
+        $user_email = mysqli_real_escape_string($connection, $row['user_email']);
+        $username = mysqli_real_escape_string($connection, $row['username']);
+        $user_phone = mysqli_real_escape_string($connection, $row['user_phone']);
+        $user_firstname = mysqli_real_escape_string($connection, $row['user_firstname']);
+        $user_lastname = mysqli_real_escape_string($connection, $row['user_lastname']);
+        $user_password = mysqli_real_escape_string($connection, $row['user_password']);
+        $user_address = mysqli_real_escape_string($connection, $row['user_address']);
+
+        // Insert into users table
+        $user_query = "INSERT INTO users (user_gender, user_email, username, user_phone, user_firstname, user_lastname, user_password, user_address) 
+                       VALUES ('$user_gender', '$user_email', '$username', '$user_phone', '$user_firstname', '$user_lastname', '$user_password', '$user_address')";
+        mysqli_query($connection, $user_query);
+
+        $last_inserted_id = mysqli_insert_id($connection);
+
+        // Prepare data for artisans table
+        $brief = mysqli_real_escape_string($connection, $row['brief']);
+        $is_artist = mysqli_real_escape_string($connection, $row['is_artist']);
+        $is_craftsmen = mysqli_real_escape_string($connection, $row['is_craftsmen']);
+        $brand_name = mysqli_real_escape_string($connection, $row['brand_name']);
+        $social_media_links = mysqli_real_escape_string($connection, $row['social_media_links']);
+        $country = mysqli_real_escape_string($connection, $row['artisan_country']);
+        $state = mysqli_real_escape_string($connection, $row['artisan_state']);
+
+        // Insert into artisans table
+        $artisan_query = "INSERT INTO artisans (artisan_ID, is_artist, is_craftsmen, brand_name, brief, social_media_links, artisan_country, artisan_state) 
+                          VALUES ('$last_inserted_id' ,'$is_artist', '$is_craftsmen', '$brand_name', '$brief', '$social_media_links', '$country', '$state')";
+        mysqli_query($connection, $artisan_query);
+
+      // Delete processed rows from sign_up_requests
+      $delete_query = "DELETE FROM sign_up_requests where artisan_status = 'approved' ";
+      mysqli_query($connection, $delete_query);
+    }
+}
+
+
+
     ?>
 
     <div id="page-wrapper">
@@ -136,7 +185,7 @@ session_start();
                                     <button class="btn-header" type="submit" name="sort_column" value="user_address">Address <i class="fa-solid fa-sort"></i></button>
                                 </th>
                                 <th>
-                                    <button class="btn-header" type="submit" name="sort_column" value="breif">Brief <i class="fa-solid fa-sort"></i></button>
+                                    <button class="btn-header" type="submit" name="sort_column" value="brief">Brief <i class="fa-solid fa-sort"></i></button>
                                 </th>
                                 <th>
                                     <button class="btn-header" type="submit" name="sort_column" value="is_artist">is_Artist <i class="fa-solid fa-sort"></i></button>
@@ -178,7 +227,7 @@ session_start();
                                 echo "<td>{$row['user_firstname']}</td>";
                                 echo "<td>{$row['user_lastname']}</td>";
                                 echo "<td>{$row['user_address']}</td>";
-                                echo "<td>{$row['breif']}</td>";
+                                echo "<td>{$row['brief']}</td>";
                                 echo "<td>{$row['is_artist']}</td>";
                                 echo "<td>{$row['is_craftsmen']}</td>";
                                 echo "<td>{$row['brand_name']}</td>";
@@ -218,6 +267,16 @@ session_start();
     </div>
 </div>
 
+<script>
+        function toggleSelectAll(checkbox) {
+            const checkboxes = document.querySelectorAll('.row-checkbox');
+            checkboxes.forEach(cb => cb.checked = checkbox.checked);
+        }
+
+        document.getElementById('search-input').addEventListener('input', function () {
+            this.form.submit();
+        });
+    </script>
 
 <?php if(isset($_GET['approve'])){
 $the_request_id = $_GET['approve'];
