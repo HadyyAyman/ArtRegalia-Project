@@ -147,10 +147,10 @@ function displayUsernameOrBrand() {
             <label for="showProfile" class="navbar-links"><i class="fa-solid fa-user" aria-hidden="true"></i>Profile <i
                 class="fa-solid fa-caret-down"></i></label>
             <ul class="drop-menu profile">
-              <li><a class="nav-link" href="#"><i class="fa-solid fa-user"></i><?php echo displayUsernameOrBrand();?></a></li>
-              <li><a class="nav-link" href="#"><i class="fa-solid fa-heart"></i>Wishlist</a></li>
-              <li><a class="nav-link" href="#"><i class="fa-solid fa-circle-question"></i>Help</a></li>
-              <li><a class="nav-link" href="#"><i class="fa-solid fa-gears"></i>Settings</a></li>
+              <li><a class="nav-link" href="./user-profile.html"><i class="fa-solid fa-user"></i><?php echo displayUsernameOrBrand();?></a></li>
+              <li><a class="nav-link" href="./wishlist.html"><i class="fa-solid fa-heart"></i>Wishlist</a></li>
+              <li><a class="nav-link" href="help.html"><i class="fa-solid fa-circle-question"></i>Help</a></li>
+              <li><a class="nav-link" href="settings.html"><i class="fa-solid fa-gears"></i>Settings</a></li>
               <?php if (isset($_SESSION['username'])): ?>
                             <li><a class="nav-link" href="logout.php"><i class="fa-solid fa-lock"></i>Sign-out</a></li>
                         <?php else: ?>

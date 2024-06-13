@@ -105,7 +105,7 @@
             <!-- /input-group -->
           </li>
           <li>
-            <a href="index.html" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+            <a href="index.php" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
           </li>
           <li>
             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Users<span class="fa arrow"></span></a>
@@ -114,16 +114,16 @@
                 <a href="sign_up_requests.php">Sign-up Requests</a>
               </li>
               <li>
-                <a href="flot.html">Artisans</a>
+                <a href="artisans.php">Artisans</a>
               </li>
               <li>
-                <a href="morris.html">Users</a>
+                <a href="customers.php">Customers</a>
               </li>
               <li>
-                <a href="morris.html">Operations</a>
+                <a href="operations.php">Operations</a>
               </li>
               <li>
-                <a href="morris.html">View all users</a>
+                <a href="view_all_users.php">View all users</a>
               </li>
               <li>
                 <a href="add_user.php">Add user</a>
