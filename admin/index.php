@@ -21,11 +21,11 @@ session_start();
         <!-- /.row -->
         <div class="row">
           <div class="col-lg-3 col-md-6">
-            <div class="panel panel-primary">
+            <div class="panel panel-green">
               <div class="panel-heading">
                 <div class="row">
                   <div class="col-xs-3">
-                    <i class="fa fa-comments fa-5x"></i>
+                    <i class="fa fa-users fa-5x"></i>
                   </div>
                   <div class="col-xs-9 text-right">
                     <div class="huge">26</div>
@@ -35,9 +35,10 @@ session_start();
               </div>
               <a href="#">
                 <div class="panel-footer">
+                  <a href="view_all_users.php">
                   <span class="pull-left">View Details</span>
                   <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-
+                  </a>
                   <div class="clearfix"></div>
                 </div>
               </a>
@@ -48,7 +49,7 @@ session_start();
               <div class="panel-heading">
                 <div class="row">
                   <div class="col-xs-3">
-                    <i class="fa fa-tasks fa-5x"></i>
+                    <i class="fa fa-user fa-5x"></i>
                   </div>
                   <div class="col-xs-9 text-right">
                     <div class="huge">12</div>
@@ -58,66 +59,47 @@ session_start();
               </div>
               <a href="#">
                 <div class="panel-footer">
+                <a href="artisans.php">
                   <span class="pull-left">View Details</span>
                   <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-
+                  </a>
                   <div class="clearfix"></div>
                 </div>
               </a>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
-            <div class="panel panel-yellow">
+            <div class="panel panel-green">
               <div class="panel-heading">
                 <div class="row">
                   <div class="col-xs-3">
-                    <i class="fa fa-shopping-cart fa-5x"></i>
+                    <i class="fa fa-user fa-5x"></i>
                   </div>
                   <div class="col-xs-9 text-right">
                     <div class="huge">124</div>
-                    <div>Users</div>
+                    <div>Customers</div>
                   </div>
                 </div>
               </div>
               <a href="#">
                 <div class="panel-footer">
+                <a href="customers.php">
                   <span class="pull-left">View Details</span>
                   <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                  </a>
 
                   <div class="clearfix"></div>
                 </div>
               </a>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="panel panel-yellow">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-3">
-                    <i class="fa fa-shopping-cart fa-5x"></i>
-                  </div>
-                  <div class="col-xs-9 text-right">
-                    <div class="huge">124</div>
-                    <div>Total Orders</div>
-                  </div>
-                </div>
-              </div>
-              <a href="#">
-                <div class="panel-footer">
-                  <span class="pull-left">View Details</span>
-                  <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 
-                  <div class="clearfix"></div>
-                </div>
-              </a>
-            </div>
-          </div>
           <div class="col-lg-3 col-md-6">
-            <div class="panel panel-yellow">
+            <div class="panel panel-green">
               <div class="panel-heading">
                 <div class="row">
                   <div class="col-xs-3">
-                    <i class="fa fa-shopping-cart fa-5x"></i>
+                    <i class="fa fa-list-alt fa-5x"></i>
                   </div>
                   <div class="col-xs-9 text-right">
                     <div class="huge">124</div>
@@ -127,16 +109,201 @@ session_start();
               </div>
               <a href="#">
                 <div class="panel-footer">
+                <a href="categories.php">
                   <span class="pull-left">View Details</span>
                   <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                  </a>
 
                   <div class="clearfix"></div>
                 </div>
               </a>
             </div>
           </div>
+
           <div class="col-lg-3 col-md-6">
-            <div class="panel panel-red">
+            <div class="panel panel-green">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-3">
+                    <i class="fa fa-cubes fa-5x"></i>
+                  </div>
+                  <div class="col-xs-9 text-right">
+                    <div class="huge">124</div>
+                    <div>Products</div>
+                  </div>
+                </div>
+              </div>
+              <a href="#">
+                <div class="panel-footer">
+                <a href="view_all_products.php">
+                  <span class="pull-left">View Details</span>
+                  <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                  </a>
+                  <div class="clearfix"></div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="panel panel-green">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-3">
+                    <i class="fa fa-pencil-square-o fa-5x"></i>
+                  </div>
+                  <div class="col-xs-9 text-right">
+                    <div class="huge">124</div>
+                    <div>Posts</div>
+                  </div>
+                </div>
+              </div>
+              <a href="#">
+                <div class="panel-footer">
+                <a href="view_all_posts.php">
+                  <span class="pull-left">View Details</span>
+                  <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                  </a>
+
+                  <div class="clearfix"></div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="panel panel-green">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-3">
+                    <i class="fa fa-certificate fa-5x"></i>
+                  </div>
+                  <div class="col-xs-9 text-right">
+                    <div class="huge">124</div>
+                    <div>Offers</div>
+                  </div>
+                </div>
+              </div>
+              <a href="#">
+                <div class="panel-footer">
+                <a href="offers.php">
+                  <span class="pull-left">View Details</span>
+                  <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                  </a>
+
+                  <div class="clearfix"></div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="panel panel-green">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-3">
+                    <i class="fa fa-calendar-days fa-5x"></i>
+                  </div>
+                  <div class="col-xs-9 text-right">
+                    <div class="huge">124</div>
+                    <div>Events</div>
+                  </div>
+                </div>
+              </div>
+              <a href="#">
+                <div class="panel-footer">
+                <a href="events.php">
+                  <span class="pull-left">View Details</span>
+                  <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                  </a>
+
+                  <div class="clearfix"></div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="panel panel-green">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-3">
+                    <i class="fa fa-comments  fa-5x"></i>
+                  </div>
+                  <div class="col-xs-9 text-right">
+                    <div class="huge">124</div>
+                    <div>Comments</div>
+                  </div>
+                </div>
+              </div>
+              <a href="#">
+                <div class="panel-footer">
+                <a href="view_all_comments.php">
+                  <span class="pull-left">View Details</span>
+                  <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                  </a>
+
+                  <div class="clearfix"></div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="panel panel-green">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-3">
+                    <i class="fa fa-file-text-o fa-5x"></i>
+                  </div>
+                  <div class="col-xs-9 text-right">
+                    <div class="huge">124</div>
+                    <div>Reports</div>
+                  </div>
+                </div>
+              </div>
+              <a href="#">
+                <div class="panel-footer">
+                <a href="view_all_reports.php">
+                  <span class="pull-left">View Details</span>
+                  <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                  </a>
+
+                  <div class="clearfix"></div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="panel panel-green">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-3">
+                    <i class="fa fa-truck fa-5x"></i>
+                  </div>
+                  <div class="col-xs-9 text-right">
+                    <div class="huge">124</div>
+                    <div>Total Orders</div>
+                  </div>
+                </div>
+              </div>
+              <a href="#">
+                <div class="panel-footer">
+                <a href="view_all_orders.php">
+                  <span class="pull-left">View Details</span>
+                  <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                  </a>
+
+                  <div class="clearfix"></div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          
+          <div class="col-lg-3 col-md-6">
+            <div class="panel panel-green">
               <div class="panel-heading">
                 <div class="row">
                   <div class="col-xs-3">
@@ -150,9 +317,10 @@ session_start();
               </div>
               <a href="#">
                 <div class="panel-footer">
+                <a href="view_all_tickets.php">
                   <span class="pull-left">View Details</span>
                   <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-
+                  </a>
                   <div class="clearfix"></div>
                 </div>
               </a>

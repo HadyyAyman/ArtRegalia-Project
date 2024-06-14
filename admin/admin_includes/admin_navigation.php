@@ -60,13 +60,7 @@
                 </div>
               </a>
             </li>
-            <li class="divider"></li>
-            <li>
-              <a class="text-center" href="#">
-                <strong>See All Alerts</strong>
-                <i class="fa fa-angle-right"></i>
-              </a>
-            </li>
+            
           </ul>
         </li>
         <li class="dropdown">
@@ -108,7 +102,7 @@
             <a href="index.php" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
           </li>
           <li>
-            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Users<span class="fa arrow"></span></a>
+            <a href="#"><i class="fa fa-users fa-fw"></i> Users<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
               <li>
                 <a href="sign_up_requests.php">Sign-up Requests</a>
@@ -129,106 +123,77 @@
                 <a href="add_user.php">Add user</a>
               </li>
             </ul>
-            <!-- /.nav-second-level -->
+            
+
           </li>
           <li>
-            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Categories<span class="fa arrow"></span></a>
+            <a href="#"><i class="fa  fa-list-alt fa-fw"></i> Categories<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
               <li>
                 <a href="categories.php">View all Categories</a>
               </li>
             </ul>
-            <!-- /.nav-second-level -->
+            
+            <li>
+            <a href="#"><i class="fa  fa-cubes fa-fw"></i> Products<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+              <li>
+                <a href="categories.php">View all Products</a>
+              </li>
+            </ul>
+          </li>
+
           </li>
           <li>
-            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Posts<span class="fa arrow"></span></a>
+            <a href="#"><i class="fa fa-pencil-square-o fa-fw"></i> Posts<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
               <li>
-                <a href="morris.html">View all Posts</a>
+                <a href="view_all_posts.php">View all Posts</a>
               </li>
               <li>
-                <a href="morris.html">Add a Post</a>
+                <a href="offers.php">Offers</a>
+              </li>
+              <li>
+                <a href="events.php">Events</a>
+              </li>
+              <li>
+                <a href="add_post.php">Add a Post</a>
               </li>
             </ul>
-            <!-- /.nav-second-level -->
+            
+
           </li>
           <li>
-            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Tickets<span class="fa arrow"></span></a>
+            <a href="#"><i class="fa fa-comments fa-fw"></i> Comments<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
               <li>
-                <a href="morris.html">View all Tickets</a>
+                <a href="categories.php">View all Comments</a>
               </li>
             </ul>
-            <!-- /.nav-second-level -->
+            
           </li>
           <li>
-            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Orders</a>
+            <a href="#"><i class="fa fa-file-text-o fa-fw"></i> Reports<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+              <li>
+                <a href="view_all_reports.php">View all reports</a>
+              </li>
+            </ul>
+          
           </li>
-          <!-- <li>
-            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
-          </li> -->
-          <!-- <li>
-            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
+          <li>
+            <a href="#"><i class="fa fa-ticket fa-fw"></i> Tickets<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
               <li>
-                <a href="panels-wells.html">Panels and Wells</a>
-              </li>
-              <li>
-                <a href="buttons.html">Buttons</a>
-              </li>
-              <li>
-                <a href="notifications.html">Notifications</a>
-              </li>
-              <li>
-                <a href="typography.html">Typography</a>
-              </li>
-              <li>
-                <a href="icons.html"> Icons</a>
-              </li>
-              <li>
-                <a href="grid.html">Grid</a>
+                <a href="view_all_tickets.php">View all Tickets</a>
               </li>
             </ul>
-          </li> -->
-          <!-- <li>
-            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-            <ul class="nav nav-second-level">
-              <li>
-                <a href="#">Second Level Item</a>
-              </li>
-              <li>
-                <a href="#">Second Level Item</a>
-              </li>
-              <li>
-                <a href="#">Third Level <span class="fa arrow"></span></a>
-                <ul class="nav nav-third-level">
-                  <li>
-                    <a href="#">Third Level Item</a>
-                  </li>
-                  <li>
-                    <a href="#">Third Level Item</a>
-                  </li>
-                  <li>
-                    <a href="#">Third Level Item</a>
-                  </li>
-                  <li>
-                    <a href="#">Third Level Item</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li> -->
-          <!-- <li>
-            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-            <ul class="nav nav-second-level">
-              <li>
-                <a href="blank.html">Blank Page</a>
-              </li>
-              <li>
-                <a href="login.html">Login Page</a>
-              </li>
-            </ul>
-          </li> -->
+          
+          </li>
+          <li>
+            <a href="tables.html"><i class="fa fa-truck fa-fw"></i> Orders</a>
+          </li>
+          
         </ul>
       </div>
     </aside>
